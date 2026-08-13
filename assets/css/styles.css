@@ -166,9 +166,9 @@ h2{font-size:clamp(24px,3.4vw,38px);text-transform:uppercase;font-weight:900}
 .site-footer{background:var(--black);color:#fff;border-top:var(--line) solid var(--black)}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:30px;max-width:1200px;margin:0 auto;padding:48px 20px}
 .footer-grid h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;color:var(--yellow)}
-.footer-grid a{display:block;color:#fff;font-weight:600;padding:3px 0;font-size:14px}
+.footer-grid a{display:block;color:#555;font-weight:600;padding:3px 0;font-size:14px}
 .footer-grid a:hover{color:var(--yellow)}
-.footer-grid p{font-size:14px;color:#ccc}
+.footer-grid p{font-size:14px;color:#555}
 .site-footer .red-text{color:var(--red)}
 .footer-bottom{border-top:var(--thin) solid #444;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:#aaa;max-width:1200px;margin:0 auto}
 .footer-bottom a{color:#555}

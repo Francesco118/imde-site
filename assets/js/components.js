@@ -59,7 +59,7 @@
       '<div class="footer-grid">'+
         '<div><span class="logo-block light"><i></i><i></i><i></i><i></i></span>'+
           '<p style="margin-top:14px;font-weight:900;font-size:20px;text-transform:uppercase">Reduced to the max.</p>'+
-          '<p style="margin-top:8px;color:#ccc">Talent Acquisition &amp; Talent Development desde 1996.</p></div>'+
+          '<p style="margin-top:8px;color:#555">Talent Acquisition &amp; Talent Development desde 1996.</p></div>'+
         '<div><h4>Produtos</h4><a href="lean-recruiting.html">Lean Recruiting</a><a href="talent-recruiter.html">Talent Recruiter</a><a href="talent-developer.html">Talent Developer</a></div>'+
         '<div><h4>Empresa</h4><a href="sobre.html">Sobre a IMDE</a><a href="clientes.html">Clientes</a><a href="depoimentos.html">Depoimentos</a><a href="parceiros.html">Parceiros</a><a href="videos.html">Vídeos</a></div>'+
         '<div><h4>Contato</h4>'+
