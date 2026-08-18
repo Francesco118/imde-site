@@ -1,0 +1,100 @@
+{
+  "partners": [
+    {
+      "slug": "daniel-thonen",
+      "name": "Daniel Thönen",
+      "title": "Senior Partner — Desenvolvimento Organizacional",
+      "country": "Suíça · Alemanha · Áustria",
+      "email": "ddt_imde@imde.net",
+      "phone": "+41 79 300 31 16",
+      "photo": "assets/img/partners/daniel-thonen.svg",
+      "areas": ["Organizational Strategy","Business Transformation","Leadership Development","Change Management"],
+      "bio": "Daniel é um parceiro sênior da IMDE com ampla experiência em transformação de organizações, desenho de modelos operacionais e desenvolvimento de lideranças. Trabalhou com clientes em manufatura, energia e tecnologia.",
+      "projects": ["Redesenho da liderança executiva em uma empresa de energia europeia.","Programa de aceleração de alto desempenho para uma grande companhia farmacêutica.","Implantação de novo modelo operacional em operações globais."]
+    },
+    {
+      "slug": "alfredo-moro",
+      "name": "Alfredo Moro",
+      "title": "Parceiro — América Latina",
+      "country": "América Latina",
+      "email": "emir.redaelli@terra.com.br",
+      "phone": "",
+      "photo": "assets/img/partners/alfredo-moro.svg",
+      "areas": ["Assessment","Coaching"],
+      "bio": "",
+      "projects": []
+    },
+    {
+      "slug": "nicola-menicacci",
+      "name": "Nicola Menicacci",
+      "title": "Parceiro — Itália",
+      "country": "Itália",
+      "email": "n.menicacci@leanrecruiting.it",
+      "phone": "+39 338 406 08 57",
+      "photo": "assets/img/partners/nicola-menicacci.svg",
+      "areas": [],
+      "bio": "",
+      "projects": []
+    },
+    {
+      "slug": "jimmy-wan",
+      "name": "Jimmy Wan",
+      "title": "Parceiro — França",
+      "country": "França",
+      "email": "",
+      "phone": "",
+      "photo": "assets/img/partners/jimmy-wan.svg",
+      "areas": [],
+      "bio": "",
+      "projects": []
+    },
+    {
+      "slug": "sara-kosic",
+      "name": "Sara Košič",
+      "title": "Parceiro — Eslovênia",
+      "country": "Eslovênia",
+      "email": "armata@t-1.si",
+      "phone": "+386 59 250 438",
+      "photo": "assets/img/partners/sara-kosic.svg",
+      "areas": [],
+      "bio": "",
+      "projects": []
+    },
+    {
+      "slug": "pavlin-panayotov",
+      "name": "Pavlin Panayotov",
+      "title": "Parceiro — Bulgária",
+      "country": "Bulgária",
+      "email": "pavlin@relaxa.bg",
+      "phone": "+359 888 807 503",
+      "photo": "assets/img/partners/pavlin-panayotov.svg",
+      "areas": [],
+      "bio": "",
+      "projects": []
+    },
+    {
+      "slug": "catalin-zaharia",
+      "name": "Catalin Zaharia",
+      "title": "Parceiro — Romênia",
+      "country": "Romênia",
+      "email": "talent@mindmaster.ro",
+      "phone": "+40 722 224 553",
+      "photo": "assets/img/partners/catalin-zaharia.svg",
+      "areas": [],
+      "bio": "",
+      "projects": []
+    },
+    {
+      "slug": "saly-camacho",
+      "name": "Saly Camacho",
+      "title": "Parceiro — Espanha",
+      "country": "Espanha",
+      "email": "Isabelle@imde.net",
+      "phone": "",
+      "photo": "assets/img/partners/saly-camacho.svg",
+      "areas": [],
+      "bio": "",
+      "projects": []
+    }
+  ]
+}

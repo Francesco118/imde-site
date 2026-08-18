@@ -44,11 +44,14 @@
     }).join('');
     return ''+
       '<div class="header-inner">'+
-        '<a class="logo" href="index.html"><span class="logo-block"><i></i><i></i><i></i><i></i></span><span>IMDE<small>Talent Acquisition &amp; Development</small></span></a>'+
+        '<a class="logo" href="index.html"><span class="logo-block"><i></i><i></i><i></i><i></i></span><span class="logo-wordmark">IMDE<small>Talent Acquisition &amp; Development</small></span></a>'+
         '<button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>'+
         '<nav class="nav" aria-label="Principal">'+items+
-          '<a class="btn btn-yellow login-link" href="login.html">Login</a>'+
-          '<div class="lang"><button class="lang-btn" id="langBtn" type="button">POR ▾</button><div class="lang-panel" id="langPanel"><ul>'+langItems+'</ul></div></div>'+
+          '<div class="header-actions">'+
+            '<a class="login-link" href="login.html">Login ↗</a>'+
+            '<a class="btn btn-primary demo-link" href="contato.html">Request a Demo</a>'+
+            '<div class="lang"><button class="lang-btn" id="langBtn" type="button">POR ▾</button><div class="lang-panel" id="langPanel"><ul>'+langItems+'</ul></div></div>'+
+          '</div>'+
         '</nav>'+
       '</div>'+
       '<div class="mobile-menu" id="mobileMenu">'+mobile+
@@ -59,7 +62,7 @@
       '<div class="footer-grid">'+
         '<div><span class="logo-block light"><i></i><i></i><i></i><i></i></span>'+
           '<p style="margin-top:14px;font-weight:900;font-size:20px;text-transform:uppercase">Reduced to the max.</p>'+
-          '<p style="margin-top:8px;color:#ccc">Talent Acquisition &amp; Talent Development desde 1996.</p></div>'+
+          '<p style="margin-top:8px;color:#555">Talent Acquisition &amp; Talent Development desde 1996.</p></div>'+
         '<div><h4>Produtos</h4><a href="lean-recruiting.html">Lean Recruiting</a><a href="talent-recruiter.html">Talent Recruiter</a><a href="talent-developer.html">Talent Developer</a></div>'+
         '<div><h4>Empresa</h4><a href="sobre.html">Sobre a IMDE</a><a href="clientes.html">Clientes</a><a href="depoimentos.html">Depoimentos</a><a href="parceiros.html">Parceiros</a><a href="videos.html">Vídeos</a></div>'+
         '<div><h4>Contato</h4>'+
