@@ -1,0 +1,96 @@
+Branching and Feature Development Guide
+
+Purpose:
+Keep development isolated from `main` by creating branches for new features, fixes, or experiments.
+
+Quick checklist:
+- Verify repo and current branch: `git status`, `git rev-parse --abbrev-ref HEAD`
+- Create and switch to a new branch: `git checkout -b my-feature`
+- Push branch: `git push -u origin my-feature`
+- Commit regularly with clear messages: `git add .` then `git commit -m "summary"`
+- Open a Pull Request (PR) to merge into `main` when ready
+- After merge, delete branch locally and remotely
+
+Commands
+
+1) Confirm repository state and remote
+   git status
+   git rev-parse --abbrev-ref HEAD
+   git remote -v
+
+2) If this directory is not a git repo
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin <git-remote-url>
+   git push -u origin HEAD
+
+3) Create and switch to a branch (local)
+   git checkout -b my-feature
+   # or: git switch -c my-feature
+
+4) Push the new branch to remote
+   git push -u origin my-feature
+
+5) Work on the branch
+   # edit files
+   git add <files>
+   git commit -m "Short, imperative message describing change"
+   git push
+
+6) Keep your branch up-to-date with `main` (recommended before opening PR)
+   # Fetch remote changes and rebase (keeps history linear):
+   git fetch origin
+   git rebase origin/main
+   # Or merge if you prefer:
+   git fetch origin
+   git merge origin/main
+
+7) Resolve conflicts if they appear during rebase/merge, then continue
+   # after resolving files:
+   git add <resolved-files>
+   git rebase --continue   # if rebasing
+   # or complete the merge with a commit if merging
+
+8) Open a Pull Request (PR)
+   - Push all commits to the branch: `git push`
+   - Open a PR in your Git hosting UI (GitHub/GitLab/Bitbucket) from `my-feature` into `main`.
+   - Add reviewers, a descriptive PR title, and a PR description explaining the change and testing steps.
+
+9) Merge and cleanup
+   - Merge via the hosting UI after approvals and passing CI.
+   - Delete branch remotely: `git push origin --delete my-feature`
+   - Delete branch locally: `git branch -d my-feature`
+
+Branch naming & commit tips
+- Use descriptive branch names: `feature/`, `fix/`, `chore/`, `hotfix/` (e.g., `feature/partners-facelift`).
+- Keep commits small and focused; write imperative commit messages: "Add partner logos" not "Added".
+- Prefix commits with scope when helpful: `feat(header): add responsive menu`.
+
+VS Code GUI quick steps
+- Open the branch menu in the bottom-left status bar → Create new branch → name it.
+- Use Source Control panel to stage and commit changes.
+- Use the cloud/remote provider extension to publish branch and create PR.
+
+Troubleshooting
+- If `git push` fails: ensure the remote exists (`git remote -v`) and you have permissions.
+- To recover from a mistaken branch: you can create another branch from `main` and cherry-pick commits.
+- To sync local `main` with remote: `git checkout main` then `git pull origin main`.
+
+Examples
+- Create branch and push:
+  git checkout -b feature/partners-facelift
+  git push -u origin feature/partners-facelift
+
+- Update branch from main (rebase):
+  git fetch origin
+  git rebase origin/main
+
+Checklist before opening PR
+- Branch pushed to remote
+- Changes committed with clear messages
+- Branch up-to-date with `main` (rebase or merge)
+- Tests/CI passing (if applicable)
+- PR description and testing instructions included
+
+If you want, I can also create a markdown version or add this to the repository README.
