@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parceiro — Daniel Thönen</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Perfil do parceiro Daniel Thönen — IMDE">  
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="partner-hero reveal">
+      <div class="container partner-hero-inner">
+        <div class="hero-left">
+          <div class="photo"><img id="p-photo" src="assets/img/partners/placeholder.svg" alt="Foto do parceiro" onerror="this.onerror=null;this.src='assets/img/partners/placeholder.svg'"></div>
+        </div>
+        <div class="hero-right">
+          <h1 id="p-name">Parceiro</h1>
+          <p id="p-title" class="subtitle"></p>
+          <p class="meta-location"><a id="p-country" href="#"></a></p>
+          <div class="hero-actions">
+            <a id="p-email-btn" class="btn" href="#">Enviar e‑mail</a>
+            <a class="btn" href="contato.html">Get in touch</a>
+            <a class="btn" href="parceiros.html" id="back-to-list">Voltar à lista</a>
+          </div>
+          <p id="p-phone" class="contact"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partner-details reveal">
+      <div class="container partner-details-grid">
+        <aside class="partner-side">
+          <h4>Área de Expertise</h4>
+          <ul id="p-areas" class="areas-list"></ul>
+        </aside>
+
+        <article class="partner-content">
+          <h2 id="p-about-title">Sobre</h2>
+          <div id="p-bio"></div>
+
+          <h3 id="p-projects-title">Projetos recentes</h3>
+          <ul id="p-projects"></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="assets/js/components.js"></script>
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+    }, { rootMargin: "0px 0px -50px 0px" });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Utility: get slug from querystring
+    function getSlug() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('slug');
+    }
+
+    async function loadPartner(slug) {
+      try {
+        const res = await fetch('assets/data/partners.json');
+        const data = await res.json();
+        const partner = data.partners.find(p => p.slug === slug);
+        if (!partner) return;
+
+        document.title = partner.name + ' — IMDE';
+        document.getElementById('p-name').textContent = partner.name;
+        document.getElementById('p-title').textContent = partner.title || '';
+        const countryEl = document.getElementById('p-country');
+        countryEl.textContent = partner.country || '';
+        countryEl.href = '#';
+
+        const photo = document.getElementById('p-photo');
+        photo.src = partner.photo || 'assets/img/partners/placeholder.svg';
+
+        const emailBtn = document.getElementById('p-email-btn');
+        if (partner.email) {
+          emailBtn.href = 'mailto:' + partner.email;
+          emailBtn.textContent = 'Enviar e‑mail';
+        } else {
+          emailBtn.style.display = 'none';
+        }
+
+        document.getElementById('p-phone').textContent = partner.phone ? 'Telefone: ' + partner.phone : '';
+
+        // areas
+        const areasEl = document.getElementById('p-areas');
+        areasEl.innerHTML = '';
+        (partner.areas || []).forEach(a => {
+          const li = document.createElement('li'); li.textContent = a; areasEl.appendChild(li);
+        });
+
+        // bio
+        document.getElementById('p-bio').innerHTML = partner.bio ? '<p>' + partner.bio + '</p>' : '';
+
+        // projects
+        const projectsEl = document.getElementById('p-projects');
+        projectsEl.innerHTML = '';
+        (partner.projects || []).forEach(pj => { const li = document.createElement('li'); li.textContent = pj; projectsEl.appendChild(li); });
+
+      } catch (err) {
+        console.error('Erro carregando dados do parceiro', err);
+      }
+    }
+
+    const slug = getSlug();
+    if (slug) loadPartner(slug);
+  </script>
+</body>
+</html>

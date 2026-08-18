@@ -11,7 +11,7 @@
 <header id="site-header"></header>
 
 <main>
-  <section class="page-hero">
+  <section class="page-hero reveal">
     <div class="container">
       <p class="breadcrumb">Soluções / Talent Recruiter</p>
       <h1>Talent Recruiter</h1>
@@ -19,7 +19,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="section-head"><span class="tick blue"></span><h2>O que entrega</h2></div>
       <div class="grid-2">
@@ -44,7 +44,7 @@
     </div>
   </section>
 
-  <section class="section bg-mondrian">
+  <section class="section bg-mondrian reveal">
     <div class="container">
       <div class="section-head"><span class="tick red"></span><h2>O processo</h2></div>
       <ol class="steps" style="list-style:none">
@@ -55,7 +55,7 @@
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta reveal">
     <div class="container cta-inner">
       <h2>Contrate os melhores, não os que sobram</h2>
       <p>Conheça o Talent Recruiter em uma demonstração.</p>
@@ -66,5 +66,19 @@
 
 <footer id="site-footer"></footer>
 <script src="assets/js/components.js"></script>
+
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -50px 0px" });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+</script>
 </body>
 </html>
