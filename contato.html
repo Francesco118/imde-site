@@ -3,47 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contato e Impressum — IMDE</title>
-<meta name="description" content="Fale com a IMDE: InSyst Master Data Experts AG, Steinhausen, Suíça.">
+<title>Contato &amp; Diagnóstico Gratuito — IMDE</title>
+<meta name="description" content="Fale com a equipe do IMDE, agende um Diagnóstico de Eficiência de 15 minutos ou solicite uma demonstração da plataforma SaaS.">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 <header id="site-header"></header>
 
 <main>
+  <!-- Page Hero -->
   <section class="page-hero reveal">
     <div class="container">
-      <p class="breadcrumb">Contato</p>
-      <h1>Contato e Impressum</h1>
-      <p>Fale com a IMDE ou encontre um parceiro certificado na sua região.</p>
+      <p class="breadcrumb">Contato / Atendimento Executivo</p>
+      <h1>Agende um Diagnóstico ou Fale Conosco</h1>
+      <p>Descubra como reduzir seus custos de recrutamento em 50% e blindar sua empresa contra fraudes de IA em um diagnóstico express de 15 minutos.</p>
     </div>
   </section>
 
+  <!-- Contact Form & Impressum Grid -->
   <section class="section reveal">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <div class="section-head"><span class="tick red"></span><h2>Envie uma mensagem</h2></div>
-          <form class="form-grid" onsubmit="alert('Mensagem enviada com sucesso! (demonstração — integre com seu provedor de e-mail)');return false">
-            <div><label>Nome *</label><input type="text" required placeholder="Seu nome"></div>
-            <div><label>E-mail *</label><input type="email" required placeholder="voce@empresa.com"></div>
-            <div><label>Empresa</label><input type="text" placeholder="Empresa"></div>
-            <div><label>Assunto</label><select><option>Lean Recruiting</option><option>Talent Recruiter</option><option>Talent Developer</option><option>Parceria</option><option>Outro</option></select></div>
-            <div class="full"><label>Mensagem *</label><textarea required placeholder="Como podemos ajudar?"></textarea></div>
-            <div class="full"><button class="btn btn-yellow" type="submit">Enviar mensagem</button></div>
+      <div class="grid-2" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:start;">
+        
+        <!-- Form Column -->
+        <div style="background:#FFFFFF;border:2px solid #E2E8F0;border-radius:24px;padding:36px;box-shadow:var(--shadow-sm);">
+          <div class="section-head"><span class="tick red"></span><h2>Solicitar Contato</h2></div>
+          
+          <form class="form-grid" id="contactForm" onsubmit="alert('Solicitação enviada com sucesso! Nossa equipe entrará em contato em até 24 horas úteis.');return false">
+            <div>
+              <label style="display:block;font-weight:700;margin-bottom:6px;font-size:0.9rem;">Seu Nome *</label>
+              <input type="text" id="formNome" required placeholder="Nome e sobrenome" style="width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font-family:inherit;">
+            </div>
+            
+            <div>
+              <label style="display:block;font-weight:700;margin-bottom:6px;font-size:0.9rem;">E-mail Corporativo *</label>
+              <input type="email" id="formEmail" required placeholder="voce@empresa.com" style="width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font-family:inherit;">
+            </div>
+
+            <div>
+              <label style="display:block;font-weight:700;margin-bottom:6px;font-size:0.9rem;">Empresa *</label>
+              <input type="text" id="formEmpresa" required placeholder="Nome da empresa" style="width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font-family:inherit;">
+            </div>
+
+            <div>
+              <label style="display:block;font-weight:700;margin-bottom:6px;font-size:0.9rem;">Telefone / WhatsApp *</label>
+              <input type="tel" id="formTel" required placeholder="+55 (11) 99999-9999" style="width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font-family:inherit;">
+            </div>
+
+            <div class="full">
+              <label style="display:block;font-weight:700;margin-bottom:6px;font-size:0.9rem;">Como podemos ajudar você? *</label>
+              <select id="formAssunto" style="width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font-family:inherit;font-weight:600;">
+                <option value="diagnostico">Agendar Diagnóstico de Eficiência Gratuito (15 min)</option>
+                <option value="demo">Agendar Demonstração da Plataforma SaaS &amp; Agentes IA</option>
+                <option value="headhunting">Contratar Serviço de Headhunting Especializado</option>
+                <option value="parceria">Informações sobre o Programa de Parceiros Certificados</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label style="display:block;font-weight:700;margin-bottom:6px;font-size:0.9rem;">Mensagem ou contexto da sua necessidade</label>
+              <textarea rows="4" placeholder="Descreva brevemente suas vagas abertas ou desafio atual de recrutamento..." style="width:100%;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font-family:inherit;"></textarea>
+            </div>
+
+            <div class="full">
+              <button class="btn btn-yellow" type="submit" style="width:100%;padding:16px;font-size:1.05rem;">Enviar Solicitação</button>
+            </div>
           </form>
-          <p class="form-note">Formulário de demonstração — conecte-o ao seu serviço de e-mail ou CRM antes de publicar.</p>
+          <p class="form-note" style="margin-top:16px;font-size:0.8rem;color:var(--text-muted);text-align:center;">Seus dados estão protegidos sob nossa Política de Privacidade.</p>
         </div>
+
+        <!-- Impressum & Corporate Details Column -->
         <div>
-          <div class="section-head"><span class="tick blue"></span><h2>Impressum</h2></div>
-          <p style="font-weight:800">InSyst Master Data Experts AG (IMDE)</p>
-          <p>Hinterbergstrasse 18<br>CH-6312 Steinhausen, Suíça</p>
-          <p style="margin-top:10px">UID: CHE-435.271.955</p>
-          <p style="margin-top:10px">Tel: <a href="tel:+41313120880">+41 31 312 08 80</a><br>
-          Cel: <a href="tel:+41793003116">+41 79 300 31 16</a><br>
-          <a href="mailto:ddt_imde@imde.net">ddt_imde@imde.net</a></p>
-          <p style="margin-top:16px"><a class="btn btn-yellow" href="parceiros.html">Ver parceiros por região</a></p>
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:24px;padding:32px;margin-bottom:24px;">
+            <div class="section-head"><span class="tick blue"></span><h2>Sede Global (Suíça)</h2></div>
+            <p style="font-weight:800;font-size:1.05rem;color:var(--primary-dark)">InSyst Master Data Experts AG</p>
+            <p style="color:var(--text-main);line-height:1.6;margin-top:4px;">
+              Hinterbergstrasse 18<br>
+              CH-6312 Steinhausen — Suíça
+            </p>
+            <p style="margin-top:12px;font-size:0.88rem;color:var(--text-muted)">UID / Registro Comercial: CHE-435.271.955</p>
+            <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;">
+              <a href="tel:+41793003116" style="font-weight:700;">+41 79 300 31 16</a>
+              <a href="mailto:ddt_imde@imde.net" style="font-weight:700;">ddt_imde@imde.net</a>
+            </div>
+          </div>
+
+          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:24px;padding:32px;">
+            <div class="section-head"><span class="tick yellow"></span><h2>Presença no Brasil &amp; LATAM</h2></div>
+            <p style="font-weight:800;color:var(--primary-dark)">IMDE — Instituto Multidisciplinar de Desenvolvimento Executivo</p>
+            <p style="color:var(--text-muted);line-height:1.6;margin-top:6px;font-size:0.92rem;">
+              Rede de consultores seniores e atendimento direto para organizações em todo o território nacional e América Latina.
+            </p>
+            <a class="btn btn-outline" href="parceiros.html" style="margin-top:16px;width:100%;text-align:center;">Ver Consultores por Região</a>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -64,6 +119,17 @@
   }, { rootMargin: "0px 0px -50px 0px" });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Auto select subject based on URL query params
+  const urlParams = new URLSearchParams(window.location.search);
+  const tipo = urlParams.get('tipo');
+  const selectElem = document.getElementById('formAssunto');
+  if (tipo && selectElem) {
+    if (tipo === 'demo') selectElem.value = 'demo';
+    else if (tipo === 'headhunting') selectElem.value = 'headhunting';
+    else if (tipo === 'parceria') selectElem.value = 'parceria';
+    else if (tipo === 'diagnostico') selectElem.value = 'diagnostico';
+  }
 </script>
 </body>
 </html>
