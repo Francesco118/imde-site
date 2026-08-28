@@ -11,10 +11,10 @@
   var NAV = [
     ['Início','index.html'],
     ['Soluções',null,[
-      ['Lean Recruiting (Triagem Rápida)','lean-recruiting.html'],
+      ['Lean Recruiting (Recrutamento Ágil)','lean-recruiting.html'],
       ['Talent Recruiter (Seleção e Perfil)','talent-recruiter.html'],
       ['Talent Developer (Desenvolvimento)','talent-developer.html'],
-      ['Agentes de IA (Dr. Colombo)','agentes-ia.html']
+      ['Detetives e Agentes de IA','agentes-ia.html']
     ]],
     ['Como Atendemos',null,[
       ['Headhunting Especializado (Done-For-You)','headhunting.html'],
@@ -25,7 +25,7 @@
       ['Depoimentos Reais','depoimentos.html'],
       ['Ciência & Metodologia Suíça','ciencia.html']
     ]],
-    ['Sobre','sobre.html'],
+    ['Sobre o IMDE','sobre.html'],
     ['Diagnóstico Gratuito','contato.html']
   ];
 
@@ -91,12 +91,13 @@
           '<a href="lean-recruiting.html">Lean Recruiting</a>'+
           '<a href="talent-recruiter.html">Talent Recruiter</a>'+
           '<a href="talent-developer.html">Talent Developer</a>'+
-          '<a href="agentes-ia.html">Agentes de IA (Dr. Colombo)</a>'+
+          '<a href="agentes-ia.html">Detetives e Agentes de IA</a>'+
           '<a href="ciencia.html">Ciência &amp; Psicometria Suíça</a>'+
         '</div>'+
         '<div><h4>Modelos &amp; Rede</h4>'+
           '<a href="headhunting.html">Headhunting Executivo (Done-For-You)</a>'+
           '<a href="saas.html">Plataforma SaaS para RH (In-House)</a>'+
+          '<a href="sobre.html">Sobre o IMDE</a>'+
           '<a href="clientes.html">Clientes &amp; Casos de Sucesso</a>'+
           '<a href="depoimentos.html">Depoimentos Reais</a>'+
           '<a href="parceiros.html">Rede Internacional de Parceiros</a>'+
