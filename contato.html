@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contato &amp; Diagnóstico Gratuito — IMDE</title>
-<meta name="description" content="Fale com a equipe do IMDE, agende um Diagnóstico de Eficiência de 15 minutos ou solicite uma demonstração da plataforma SaaS.">
+<title>Contato &amp; Agendamento de Diagnóstico — IMDE</title>
+<meta name="description" content="Agende diretamente na agenda um Diagnóstico de Eficiência de 15 minutos ou fale com a equipe executiva do IMDE.">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -20,14 +20,38 @@
     </div>
   </section>
 
-  <!-- Contact Form & Impressum Grid -->
-  <section class="section reveal">
+  <!-- Interactive Google Calendar Booking Section -->
+  <section class="section reveal" id="agendar" style="padding-top:20px;padding-bottom:40px;">
+    <div class="container">
+      <div class="calendar-card">
+        <div class="section-head">
+          <span class="tick yellow"></span>
+          <h2>Agendamento Instantâneo na Agenda</h2>
+        </div>
+        <p style="color:var(--text-muted);font-size:1.05rem;line-height:1.6;margin-bottom:28px;">
+          Selecione o melhor dia e horário abaixo para agendar seu <strong>Diagnóstico de Eficiência de 15 minutos</strong> ou uma <strong>Demonstração ao Vivo da Plataforma</strong>. O convite com o link de videoconferência será enviado imediatamente para o seu e-mail.
+        </p>
+
+        <div class="calendar-wrapper">
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1slaf9J0YETDSupbPI5MJ3MXsZ9RxfU3O7BM05evPQI69DaKC9dOVpyxMuG7pk0Jbh7nHAn6Q_?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+          <!-- end Google Calendar Appointment Scheduling -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Impressum Grid (Alternative Option) -->
+  <section class="section reveal" style="padding-top:20px;">
     <div class="container">
       <div class="grid-2" style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:start;">
         
         <!-- Form Column -->
         <div style="background:#FFFFFF;border:2px solid #E2E8F0;border-radius:24px;padding:36px;box-shadow:var(--shadow-sm);">
-          <div class="section-head"><span class="tick red"></span><h2>Solicitar Contato</h2></div>
+          <div class="section-head"><span class="tick red"></span><h2>Prefere Enviar uma Mensagem?</h2></div>
+          <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:20px;">
+            Preencha o formulário abaixo e nossa equipe retornará o contato por e-mail ou WhatsApp em até 24 horas úteis:
+          </p>
           
           <form class="form-grid" id="contactForm" onsubmit="alert('Solicitação enviada com sucesso! Nossa equipe entrará em contato em até 24 horas úteis.');return false">
             <div>

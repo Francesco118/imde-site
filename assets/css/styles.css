@@ -1254,10 +1254,10 @@ input[type=range]::-webkit-slider-runnable-track {
   background: var(--accent-blue);
 }
 .agent-box.colombo::before { background: var(--alert-red); }
-.agent-box.sherlock::before { background: var(--accent-blue); }
+.agent-box.sherlock::before { background: #6366F1; }
 .agent-box.pep::before { background: #FACC15; }
-.agent-box.admina::before { background: #6366F1; }
-.agent-box.victoria::before { background: #10B981; }
+.agent-box.admina::before { background: #0F172A; }
+.agent-box.victoria::before { background: var(--accent-blue); }
 
 .agent-header {
   display: flex;
@@ -1355,4 +1355,37 @@ input[type=range]::-webkit-slider-runnable-track {
 @media (max-width: 560px) {
   .stats-highlight-grid { grid-template-columns: 1fr; }
   .two-door-card { padding: 28px 20px; }
+}
+
+/* Appointment Scheduler Widget */
+.calendar-card {
+  background: #FFFFFF;
+  border: 2px solid var(--primary-dark);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.calendar-wrapper {
+  width: 100%;
+  min-height: 620px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  background: #FAFAFA;
+}
+.calendar-wrapper iframe {
+  width: 100%;
+  min-height: 620px;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .calendar-card {
+    padding: 24px 16px;
+  }
+  .calendar-wrapper,
+  .calendar-wrapper iframe {
+    min-height: 680px;
+  }
 }
