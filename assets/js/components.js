@@ -23,7 +23,8 @@
     ['Casos & Ciência',null,[
       ['Clientes & Referências','clientes.html'],
       ['Depoimentos Reais','depoimentos.html'],
-      ['Ciência & Metodologia Suíça','ciencia.html']
+      ['Ciência & Metodologia Suíça','ciencia.html'],
+      ['Documentação Científica & Downloads','documentacao.html']
     ]],
     ['Sobre o IMDE','sobre.html'],
     ['Diagnóstico Gratuito','contato.html']
@@ -93,6 +94,7 @@
           '<a href="talent-developer.html">Talent Developer</a>'+
           '<a href="agentes-ia.html">Detetives e Agentes de IA</a>'+
           '<a href="ciencia.html">Ciência &amp; Psicometria Suíça</a>'+
+          '<a href="documentacao.html">Documentação &amp; Downloads</a>'+
         '</div>'+
         '<div><h4>Modelos &amp; Rede</h4>'+
           '<a href="headhunting.html">Headhunting Executivo (Done-For-You)</a>'+

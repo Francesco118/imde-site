@@ -130,31 +130,31 @@
   <!-- The 3 Solution Pillars -->
   <section class="section reveal" id="solucoes">
     <div class="container">
-      <div class="section-head"><span class="tick yellow"></span><h2>A Jornada Completa do Talento</h2></div>
+      <div class="section-head"><span class="tick red"></span><h2>A Jornada Completa do Talento</h2></div>
       <p style="color:var(--text-muted);font-size:1.1rem;margin-bottom:36px;max-width:720px;">
         Três módulos integrados que cobrem da pré-seleção em massa ao desenvolvimento e retenção da sua liderança:
       </p>
 
       <div class="mondrian">
-        <!-- Recrutamento é Amarelo -->
-        <article class="card yellow">
+        <!-- 1. Lean Recruiting = VERMELHO (#CC0000) -->
+        <article class="card red">
           <div class="card-visual" aria-hidden="true">
             <span class="mini-block block-a"></span>
             <span class="mini-block block-b"></span>
             <span class="mini-block block-c"></span>
           </div>
-          <span class="door-tag tag-yellow" style="margin-bottom:8px;">Recrutamento Ágil</span>
+          <span class="door-tag tag-red" style="margin-bottom:8px;">Recrutamento Ágil</span>
           <h3>1. Lean Recruiting</h3>
           <p>Triagem inteligente e automatizada com o Detetive Dr. Colombo para vagas com alto ou baixo volume de inscritos.</p>
           <ul class="feature-list">
-            <li>Detecção de candidaturas falsas e IA com Dr. Colombo</li>
+            <li>Detecção de 99% das candidaturas com IA pelo Dr. Colombo</li>
             <li>Ranking objetivo dos mais aptos em uma única página</li>
             <li>Redução comprovada de 29 para 11 dias no time-to-interview</li>
           </ul>
-          <a class="btn btn-yellow" href="lean-recruiting.html">Detalhes do Lean Recruiting</a>
+          <a class="btn btn-red" href="lean-recruiting.html">Detalhes do Lean Recruiting</a>
         </article>
 
-        <!-- Recrutamento e Seleção é Amarelo -->
+        <!-- 2. Talent Recruiter = AMARELO (#FFCF00) -->
         <article class="card yellow">
           <div class="card-visual" aria-hidden="true">
             <span class="mini-block block-a"></span>
@@ -172,7 +172,7 @@
           <a class="btn btn-yellow" href="talent-recruiter.html">Detalhes do Talent Recruiter</a>
         </article>
 
-        <!-- Desenvolvimento é Azul -->
+        <!-- 3. Talent Developer = AZUL (#0000CC) -->
         <article class="card blue">
           <div class="card-visual" aria-hidden="true">
             <span class="mini-block block-a"></span>
@@ -187,13 +187,13 @@
             <li>Planos de desenvolvimento individuais sem desperdício de verba</li>
             <li>Máximo Retorno sobre o Investimento em Desenvolvimento (RODI)</li>
           </ul>
-          <a class="btn" href="talent-developer.html">Detalhes do Talent Developer</a>
+          <a class="btn btn-blue" href="talent-developer.html">Detalhes do Talent Developer</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- AI Agents Squad Showcase -->
+  <!-- AI Agents Squad Showcase with Official Avatars -->
   <section class="agents-section reveal">
     <div class="container">
       <div class="section-head"><span class="tick blue"></span><h2>Nossa Equipe de Detetives e Agentes de IA</h2></div>
@@ -202,70 +202,74 @@
       </p>
 
       <div class="agents-grid">
-        <!-- Detetive 1 -->
+        <!-- Detetive 1: Dr Colombo -->
         <div class="agent-box colombo">
           <div class="agent-header">
-            <div class="agent-icon">🕵️</div>
+            <img class="agent-avatar-img" src="assets/img/agents/dr-colombo.png" alt="Dr. Colombo">
             <div class="agent-meta">
               <h3>Dr. Colombo</h3>
-              <span class="agent-role">Detetive Anti-Fraude</span>
+              <span class="agent-role" style="color:var(--alert-red);">Detetive Anti-Fraude</span>
             </div>
           </div>
           <p>Investiga anomalias, uso de IA na redação de respostas e currículos inflados. Protege seu ranking contra manipulações.</p>
-          <span class="agent-badge-tag" style="color:var(--alert-red);background:rgba(239,68,68,0.1);">Detetive de Integridade</span>
+          <span class="agent-badge-tag" style="color:var(--alert-red);background:rgba(204,0,0,0.1);">Detetive de Integridade</span>
         </div>
 
-        <!-- Detetive 2 -->
+        <!-- Detetive 2: Sherlock -->
         <div class="agent-box sherlock">
           <div class="agent-header">
-            <div class="agent-icon">🔍</div>
+            <img class="agent-avatar-img" src="assets/img/agents/sherlock.png" alt="Sherlock">
             <div class="agent-meta">
               <h3>Sherlock</h3>
-              <span class="agent-role">Detetive de Job Fit</span>
+              <span class="agent-role" style="color:#6366F1;">Detetive de Job Fit</span>
             </div>
           </div>
           <p>Analisa a coerência lógica das respostas contra os desafios reais da função, auditando com precisão a aptidão técnica.</p>
           <span class="agent-badge-tag" style="color:#6366F1;background:rgba(99,102,241,0.1);">Detetive de Competência</span>
         </div>
 
-        <!-- Agente 1 -->
+        <!-- Agente 1: Professor PEP -->
         <div class="agent-box pep">
           <div class="agent-header">
-            <div class="agent-icon">🎓</div>
+            <img class="agent-avatar-img" src="assets/img/agents/professor-pep.png" alt="Professor PEP">
             <div class="agent-meta">
               <h3>Professor PEP</h3>
-              <span class="agent-role">Agente de Potencial</span>
+              <span class="agent-role" style="color:#855500;">Agente de Potencial</span>
             </div>
           </div>
           <p>Avalia pontos fortes latentes, probabilidade de alta performance futura e capacidade de adaptação do candidato.</p>
-          <span class="agent-badge-tag">Agente de Desempenho</span>
+          <span class="agent-badge-tag" style="background:rgba(255,207,0,0.25);color:#855500;">Agente de Desempenho</span>
         </div>
 
-        <!-- Agente 2 -->
+        <!-- Agente 2: Admina -->
         <div class="agent-box admina">
           <div class="agent-header">
-            <div class="agent-icon">📋</div>
+            <img class="agent-avatar-img" src="assets/img/agents/admina.png" alt="Admina">
             <div class="agent-meta">
               <h3>Admina</h3>
-              <span class="agent-role">Agente de Estruturação</span>
+              <span class="agent-role" style="color:var(--primary-dark);">Agente de Estruturação</span>
             </div>
           </div>
           <p>Transforma tarefas críticas da vaga em perguntas qualificadoras de alta precisão para aplicação no processo.</p>
-          <span class="agent-badge-tag">Agente de Processo</span>
+          <span class="agent-badge-tag" style="background:rgba(15,23,42,0.06);color:var(--primary-dark);">Agente de Processo</span>
         </div>
 
-        <!-- Agente 3 (Desenvolvimento é Azul) -->
+        <!-- Agente 3: Victoria Discret (Desenvolvimento é Azul) -->
         <div class="agent-box victoria">
           <div class="agent-header">
-            <div class="agent-icon" style="background:rgba(37,99,235,0.1);color:var(--accent-blue);">💡</div>
+            <img class="agent-avatar-img" src="assets/img/agents/victoria-discret.png" alt="Victoria Discret">
             <div class="agent-meta">
               <h3>Victoria Discret</h3>
               <span class="agent-role" style="color:var(--accent-blue);">Agente de Desenvolvimento</span>
             </div>
           </div>
           <p>Apoia o onboarding nos primeiros 6 meses, orientando lideranças com base nos pontos fortes e desenvolvimento comportamental.</p>
-          <span class="agent-badge-tag" style="color:var(--accent-blue);background:rgba(37,99,235,0.1);">Agente de Onboarding</span>
+          <span class="agent-badge-tag" style="color:var(--accent-blue);background:rgba(0,0,204,0.1);">Agente de Onboarding</span>
         </div>
+      </div>
+
+      <div style="text-align:center;margin-top:32px;">
+        <a class="btn btn-outline" href="documentacao.html">Acessar Biblioteca Científica &amp; Downloads de Laudos →</a>
       </div>
     </div>
   </section>
