@@ -190,38 +190,49 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   padding: 18px 28px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 4px;
   color: var(--primary-dark);
   text-decoration: none;
   flex-shrink: 0;
+  min-width: 0;
+  max-width: 200px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.logo:hover,
+.logo:focus,
+.logo:active {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  text-decoration: none;
 }
 
 .logo-wordmark {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-size: clamp(1.3rem, 1.5vw, 1.9rem);
   letter-spacing: -0.06em;
-  line-height: 0.9;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .logo small {
-  font-family: var(--font-body);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-top: 6px;
-  font-weight: 700;
+  display: none;
 }
 
 .logo:hover { text-decoration: none; }
@@ -229,32 +240,50 @@ h1, h2, h3, h4 {
 .logo-block {
   width: 44px;
   height: 44px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
   border: 1px solid rgba(15, 23, 42, 0.16);
   border-radius: 10px;
   overflow: hidden;
   flex: none;
+  object-fit: cover;
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+  background: transparent;
 }
 
-.logo-block i {
+.logo-mark {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  background: transparent;
 }
 
-.logo-block i:nth-child(1) { background: var(--alert-red); }
-.logo-block i:nth-child(2) { background: var(--accent-blue); }
-.logo-block i:nth-child(3) { background: #F8D75A; }
-.logo-block i:nth-child(4) { background: #FFFFFF; }
+.logo-classic {
+  width: 138px;
+  height: auto;
+  max-height: 46px;
+  object-fit: contain;
+  filter: none;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  width: 170px;
+  max-height: 64px;
+}
+
+.logo-block.light {
+  border-color: rgba(255, 255, 255, 0.7);
+}
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
+  flex-wrap: nowrap;
+  margin-left: 8px;
 }
 
 .nav > a,
@@ -493,7 +522,7 @@ h1, h2, h3, h4 {
 
 .footer-grid a,
 .footer-grid p {
-  color: #334155;
+  color: #ff;
   line-height: 1.7;
 }
 
@@ -1588,5 +1617,250 @@ input[type=range]::-webkit-slider-runnable-track {
   .calendar-wrapper,
   .calendar-wrapper iframe {
     min-height: 680px;
+  }
+}
+
+/* ---------- Multiagent Architecture Pipeline Flow ---------- */
+.pipeline-section {
+  padding: 80px 0;
+  background: #F8FAFC;
+}
+.pipeline-wrapper {
+  background: #FFFFFF;
+  border: 3px solid var(--primary-dark);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin-top: 32px;
+}
+.pipeline-orchestrator {
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 3px solid #0F172A;
+  flex-wrap: wrap;
+}
+.pipeline-orchestrator-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pipeline-orchestrator-title h3 {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  margin: 0;
+}
+.pipeline-orchestrator-desc {
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+
+.pipeline-squad-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  background: #FFFFFF;
+  border-bottom: 2px solid #E2E8F0;
+}
+.pipeline-agent-col {
+  padding: 24px 14px;
+  border-right: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+}
+.pipeline-agent-col:last-child {
+  border-right: none;
+}
+.pipeline-agent-col:hover {
+  background: #F8FAFC;
+}
+.pipeline-agent-col::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+.pipeline-agent-col.col-hunter::before { background: #0F172A; }
+.pipeline-agent-col.col-admina::before { background: var(--alert-red); }
+.pipeline-agent-col.col-colombo::before { background: var(--alert-red); }
+.pipeline-agent-col.col-sherlock::before { background: var(--yellow); }
+.pipeline-agent-col.col-pep::before { background: var(--yellow); }
+.pipeline-agent-col.col-victoria::before { background: var(--accent-blue); }
+
+.pipeline-agent-col .agent-avatar-img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+}
+.pipeline-agent-col h4 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  color: var(--primary-dark);
+}
+.pipeline-agent-role-sub {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.pipeline-agent-desc {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+.pipeline-step-badge {
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 8px;
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+.col-hunter .pipeline-step-badge { background: #0F172A; color: #FFFFFF; }
+.col-admina .pipeline-step-badge { background: var(--alert-red); color: #FFFFFF; }
+.col-colombo .pipeline-step-badge { background: var(--alert-red); color: #FFFFFF; }
+.col-sherlock .pipeline-step-badge { background: var(--yellow); color: #0F172A; }
+.col-pep .pipeline-step-badge { background: var(--yellow); color: #0F172A; }
+.col-victoria .pipeline-step-badge { background: var(--accent-blue); color: #FFFFFF; }
+
+.pipeline-software-layer {
+  background: #F8FAFC;
+  padding: 20px 24px;
+  border-bottom: 2px solid #E2E8F0;
+}
+.pipeline-software-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  text-align: center;
+}
+.pipeline-software-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(110px, 1fr));
+  gap: 12px;
+  text-align: center;
+  align-items: stretch;
+}
+.pipeline-software-item {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 12px 8px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+}
+.pipeline-software-icon {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.pipeline-software-name {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  display: block;
+  margin-bottom: 4px;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+}
+.pipeline-software-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1.3;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+}
+@media (max-width: 768px) {
+  .pipeline-software-grid {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .pipeline-software-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pipeline-philosophy-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  background: #FFFFFF;
+}
+.pipeline-philo-col {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-right: 1px solid #E2E8F0;
+}
+.pipeline-philo-col:last-child {
+  border-right: none;
+  background: #FAFAFA;
+}
+.pipeline-philo-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+.pipeline-philo-text h5 {
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+  color: var(--primary-dark);
+}
+.pipeline-philo-text p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .pipeline-squad-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pipeline-agent-col {
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .pipeline-philosophy-bar {
+    grid-template-columns: 1fr;
+  }
+  .pipeline-philo-col {
+    border-right: none;
+    border-bottom: 1px solid #E2E8F0;
+  }
+}
+@media (max-width: 640px) {
+  .pipeline-squad-strip {
+    grid-template-columns: 1fr;
   }
 }

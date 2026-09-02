@@ -9,7 +9,6 @@
   ];
   
   var NAV = [
-    ['Início','index.html'],
     ['Soluções',null,[
       ['Lean Recruiting (Recrutamento Ágil)','lean-recruiting.html'],
       ['Talent Recruiter (Seleção e Perfil)','talent-recruiter.html'],
@@ -59,7 +58,7 @@
 
     return ''+
       '<div class="header-inner">'+
-        '<a class="logo" href="index.html"><span class="logo-block"><i></i><i></i><i></i><i></i></span><span class="logo-wordmark">IMDE<small>Talent Acquisition &amp; Development</small></span></a>'+
+        '<a class="logo" href="index.html"><img class="logo-mark logo-classic" src="assets/img/logo-imde-classic-removebg-preview.png" alt="IMDE logo"><span class="logo-wordmark">IMDE</span></a>'+
         '<button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>'+
         '<nav class="nav" aria-label="Principal">'+items+
           '<div class="header-actions">'+
@@ -82,7 +81,7 @@
   function footerHTML(){
     return ''+
       '<div class="footer-grid">'+
-        '<div><span class="logo-block light"><i></i><i></i><i></i><i></i></span>'+
+        '<div><img class="logo-mark logo-classic footer-logo" src="assets/img/logo-imde-classic-removebg-preview.png" alt="IMDE logo">'+
           '<p style="margin-top:14px;font-weight:900;font-size:22px;letter-spacing:-0.03em;color:var(--primary-dark)">IMDE</p>'+
           '<p style="font-weight:800;font-size:14px;text-transform:uppercase;color:var(--accent-blue);margin-top:4px">Reduced to the max.</p>'+
           '<p style="margin-top:10px;color:#475569;font-size:0.88rem;line-height:1.6">Pioneirismo em psicometria preditiva suíça e ecossistema de inteligência artificial multi-agente desde 1996.</p>'+
@@ -122,6 +121,42 @@
   }
 
   function init(){
+    var favicon=document.querySelector('link[rel="icon"][href="assets/img/favicon_io/favicon.ico"]') || document.querySelector('link[rel="icon"]');
+    if(!favicon || !favicon.getAttribute('href') || favicon.getAttribute('href') !== 'assets/img/favicon_io/favicon.ico') {
+      favicon = document.createElement('link');
+      favicon.rel='icon';
+      favicon.href='assets/img/favicon_io/favicon.ico';
+      favicon.type='image/x-icon';
+      document.head.appendChild(favicon);
+    }
+    favicon.href='assets/img/favicon_io/favicon.ico';
+    favicon.type='image/x-icon';
+
+    var favicon16=document.querySelector('link[rel="icon"][sizes="16x16"]') || document.createElement('link');
+    favicon16.rel='icon';
+    favicon16.type='image/png';
+    favicon16.sizes='16x16';
+    favicon16.href='assets/img/favicon_io/favicon-16x16.png';
+    if(!favicon16.parentNode) document.head.appendChild(favicon16);
+
+    var favicon32=document.querySelector('link[rel="icon"][sizes="32x32"]') || document.createElement('link');
+    favicon32.rel='icon';
+    favicon32.type='image/png';
+    favicon32.sizes='32x32';
+    favicon32.href='assets/img/favicon_io/favicon-32x32.png';
+    if(!favicon32.parentNode) document.head.appendChild(favicon32);
+
+    var apple=document.querySelector('link[rel="apple-touch-icon"]') || document.createElement('link');
+    apple.rel='apple-touch-icon';
+    apple.sizes='180x180';
+    apple.href='assets/img/favicon_io/apple-touch-icon.png';
+    if(!apple.parentNode) document.head.appendChild(apple);
+
+    var manifest=document.querySelector('link[rel="manifest"]') || document.createElement('link');
+    manifest.rel='manifest';
+    manifest.href='assets/img/favicon_io/site.webmanifest';
+    if(!manifest.parentNode) document.head.appendChild(manifest);
+
     var h=document.getElementById('site-header'); if(h) h.innerHTML=headerHTML();
     var f=document.getElementById('site-footer'); if(f) f.innerHTML=footerHTML();
     var ham=document.getElementById('hamburger'), mm=document.getElementById('mobileMenu');
