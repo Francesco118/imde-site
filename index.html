@@ -14,6 +14,10 @@
      ========================================================================== */
 
   /* Reset global para remoção obrigatória de bullet points em listas */
+  html, body {
+    overflow-x: hidden;
+  }
+
   ul, ol {
     list-style: none !important;
     padding-left: 0 !important;
@@ -31,7 +35,6 @@
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    overflow-x: hidden;
   }
 
   .independent-block {
@@ -144,12 +147,12 @@
 
   .pillar-pill {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 18px;
     background: #FFFFFF;
     border: 2.5px solid #0A0F1D;
     border-radius: 16px;
-    padding: 20px 24px;
+    padding: 20px 22px;
     text-decoration: none;
     color: #0A0F1D;
     box-shadow: 0 4px 0 #0A0F1D;
@@ -163,19 +166,20 @@
   }
 
   .pillar-badge-circle {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 900;
     border: 2.5px solid #0A0F1D;
     color: #FFFFFF;
     box-shadow: 2px 2px 0 #0A0F1D;
+    margin-top: 3px;
   }
 
   .pillar-badge-lr { background: var(--alert-red); }
@@ -188,22 +192,41 @@
 
   .pillar-title {
     font-family: var(--font-display);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 900;
     line-height: 1.2;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #0A0F1D;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .pillar-desc {
-    font-size: 1rem;
-    line-height: 1.5;
+  .pillar-feature-list {
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .pillar-feature-list li {
+    font-size: 0.95rem;
+    line-height: 1.45;
     color: #0A0F1D;
-    font-weight: 500;
-    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    list-style: none !important;
+  }
+
+  .pillar-feature-list li::before {
+    content: "—";
+    color: #0A0F1D;
+    font-weight: 900;
+    flex-shrink: 0;
   }
 
   .pillar-arrow {
@@ -350,14 +373,41 @@
     border: 2px solid #0A0F1D;
   }
 
-  .step-agent-indicator {
-    font-size: 0.88rem;
+  .step-agent-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F1F5F9;
+    border: 1.5px solid #0A0F1D;
+    border-radius: 999px;
+    padding: 3px 10px 3px 4px;
+  }
+
+  .step-agent-avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  .step-avatar-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #0A0F1D;
+    background: #FFFFFF;
+    margin-left: -8px;
+    box-shadow: 1px 1px 0 #0A0F1D;
+  }
+
+  .step-avatar-img:first-child {
+    margin-left: 0;
+  }
+
+  .step-agent-label {
+    font-size: 0.86rem;
     font-weight: 800;
     color: #0A0F1D;
-    background: #F1F5F9;
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1.5px solid #0A0F1D;
+    white-space: nowrap;
   }
 
   .process-step-card h3 {
@@ -410,6 +460,10 @@
   .calc-wrapper-centered {
     max-width: 880px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   /* --------------------------------------------------------------------------
@@ -783,7 +837,11 @@
                 <span>Lean Recruiting</span>
                 <span class="pillar-arrow">→</span>
               </div>
-              <p class="pillar-desc">Triagem inteligente com Detetive Dr. Colombo. Redução de 29 para 11 dias no time-to-hire.</p>
+              <ul class="pillar-feature-list">
+                <li>Mais candidaturas com anúncios centrados nos candidatos</li>
+                <li>Pré-seleção e comunicação automatizada</li>
+                <li>Contratar mais rapidamente, melhor com custos menores</li>
+              </ul>
             </div>
           </a>
 
@@ -792,10 +850,14 @@
             <div class="pillar-badge-circle pillar-badge-tr">TR</div>
             <div class="pillar-info">
               <div class="pillar-title">
-                <span>Talent Recruiter</span>
+                <span>Recrutador de Talentos</span>
                 <span class="pillar-arrow">→</span>
               </div>
-              <p class="pillar-desc">Diagnóstico psicométrico aprofundado e roteiro de entrevista sob medida para o cargo.</p>
+              <ul class="pillar-feature-list">
+                <li>Critérios relevantes para sucesso e guia para entrevistas</li>
+                <li>Diagnóstico científico (Fiabilidade .83; Validade .72)</li>
+                <li>Avaliações comportamentais e Redução de extravios</li>
+              </ul>
             </div>
           </a>
 
@@ -804,10 +866,14 @@
             <div class="pillar-badge-circle pillar-badge-td">TD</div>
             <div class="pillar-info">
               <div class="pillar-title">
-                <span>Talent Developer</span>
+                <span>Desenvolvedor de Talentos</span>
                 <span class="pillar-arrow">→</span>
               </div>
-              <p class="pillar-desc">Desenvolvimento individual direcionado, retenção de talentos e plano de sucessão de liderança.</p>
+              <ul class="pillar-feature-list">
+                <li>Identificar as necessidades de desenvolvimento</li>
+                <li>Sucessão segura com plano de desenvolvimento</li>
+                <li>Registar a satisfação e reduzir as flutuações</li>
+              </ul>
             </div>
           </a>
         </div>
@@ -917,7 +983,13 @@
         <div class="process-step-card">
           <div class="step-card-header">
             <span class="step-num-badge">Etapa 1</span>
-            <span class="step-agent-indicator">Admina + Hunter</span>
+            <span class="step-agent-pill">
+              <span class="step-agent-avatars">
+                <img class="step-avatar-img" src="assets/img/agents/admina.png" alt="Admina">
+                <img class="step-avatar-img" src="assets/img/agents/marc-hunter.png" alt="Marc Hunter">
+              </span>
+              <span class="step-agent-label">Admina + Hunter</span>
+            </span>
           </div>
           <h3>Sourcing &amp; Anúncio</h3>
           <p>Anúncios estruturados nas tarefas de valor real, atraindo até 500% mais inscritos qualificados e afastando curiosos.</p>
@@ -928,7 +1000,12 @@
         <div class="process-step-card">
           <div class="step-card-header">
             <span class="step-num-badge">Etapa 2</span>
-            <span class="step-agent-indicator">Dr. Colombo</span>
+            <span class="step-agent-pill">
+              <span class="step-agent-avatars">
+                <img class="step-avatar-img" src="assets/img/agents/dr-colombo.png" alt="Dr. Colombo">
+              </span>
+              <span class="step-agent-label">Dr. Colombo</span>
+            </span>
           </div>
           <h3>Auditoria Anti-Fraude</h3>
           <p>Detecção instantânea de até 99% das candidaturas geradas por IA, checagem de integridade e filtro salarial.</p>
@@ -939,7 +1016,13 @@
         <div class="process-step-card">
           <div class="step-card-header">
             <span class="step-num-badge">Etapa 3</span>
-            <span class="step-agent-indicator">Sherlock + PEP</span>
+            <span class="step-agent-pill">
+              <span class="step-agent-avatars">
+                <img class="step-avatar-img" src="assets/img/agents/sherlock.png" alt="Sherlock Holmes">
+                <img class="step-avatar-img" src="assets/img/agents/professor-pep.png" alt="Professor PEP">
+              </span>
+              <span class="step-agent-label">Sherlock + PEP</span>
+            </span>
           </div>
           <h3>Ranking Dinâmico</h3>
           <p>Triagem objetiva de fit técnico e potencial latente. Os melhores classificados reunidos em uma tela transparente.</p>
@@ -950,7 +1033,12 @@
         <div class="process-step-card">
           <div class="step-card-header">
             <span class="step-num-badge">Etapa 4</span>
-            <span class="step-agent-indicator">Gestores + Victoria</span>
+            <span class="step-agent-pill">
+              <span class="step-agent-avatars">
+                <img class="step-avatar-img" src="assets/img/agents/victoria-discret.png" alt="Victoria Discret">
+              </span>
+              <span class="step-agent-label">Gestores + Victoria</span>
+            </span>
           </div>
           <h3>Entrevistas &amp; Decisão</h3>
           <p>Roteiros direcionados para First Call com os finalistas reais e onboarding assistido com plano de desenvolvimento.</p>
@@ -971,14 +1059,14 @@
        ======================================================================== -->
   <section class="independent-block block-calculator reveal calc-section" id="block-calculator" data-block="4">
     <div class="container">
-      <div class="calc-wrapper-centered">
+      <div class="calc-wrapper-centered" style="display:flex;flex-direction:column;align-items:center;width:100%;">
         <div class="section-center-head">
           <span class="kicker kicker-small">Impacto Financeiro Real</span>
           <h2>Calculadora de Eficiência de Recrutamento</h2>
           <p>Simule a quantidade de contratações anuais (6 a 600). O custo oculto de triagem manual aparece em tempo real:</p>
         </div>
 
-        <div class="calc-panel" style="margin:0 auto;">
+        <div class="calc-panel" style="margin:0 auto;width:100%;max-width:780px;display:block;">
           <div class="calc-box" style="width:100%;box-sizing:border-box;">
             <label for="turnoverRange" style="display:block;margin-bottom:12px;font-weight:800;color:#0A0F1D;">Substituições / Contratações por ano (6 a 600)</label>
             <div class="calc-slider-row">
