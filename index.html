@@ -6,65 +6,860 @@
 <title>IMDE — Contratações Sem Fraude e Decisões Científicas</title>
 <meta name="description" content="Una 30 anos de psicometria suíça e uma equipe de Agentes de IA para eliminar fraudes em currículos, reduzir custos em até 50% e acelerar contratações.">
 <link rel="stylesheet" href="assets/css/styles.css">
+
+<style>
+  /* ==========================================================================
+     SISTEMA DE DESIGN MODULAR & CENTRALIZADO (MOCKUP IMDE)
+     Garante alinhamento central em todas as resoluções, sem esticar ou puxar para as laterais.
+     ========================================================================== */
+
+  /* Reset global para remoção obrigatória de bullet points em listas */
+  ul, ol {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  li {
+    list-style: none !important;
+  }
+
+  /* Container Geral Centralizado */
+  .page-blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .independent-block {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* Cabeçalhos de seção centralizados */
+  .section-center-head {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 40px auto;
+  }
+
+  .section-center-head h2 {
+    font-size: clamp(28px, 3.4vw, 46px);
+    font-weight: 900;
+    color: #0A0F1D;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .section-center-head p {
+    font-size: 1.15rem;
+    color: #0A0F1D;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0 auto;
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 1: HERO COM PILLS LR / TR / TD
+     -------------------------------------------------------------------------- */
+  .block-hero {
+    padding: 70px 0 80px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    border-bottom: var(--border-dark);
+  }
+
+  .hero-split-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-copy {
+    max-width: 620px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 900;
+    line-height: 1.12;
+    margin: 12px 0 20px;
+    letter-spacing: -0.03em;
+    color: #0A0F1D;
+  }
+
+  .hero-lead-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #0A0F1D;
+    font-weight: 500;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: #0A0F1D;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+    display: inline-block;
+    border-bottom: 3.5px solid var(--alert-red);
+    padding-bottom: 3px;
+  }
+
+  .hero-actions-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* Stack das 3 Pills da Direita */
+  .hero-pillars-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .pillar-pill {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #FFFFFF;
+    border: 2.5px solid #0A0F1D;
+    border-radius: 16px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: #0A0F1D;
+    box-shadow: 0 4px 0 #0A0F1D;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .pillar-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #0A0F1D;
+    color: #0A0F1D;
+  }
+
+  .pillar-badge-circle {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 900;
+    border: 2.5px solid #0A0F1D;
+    color: #FFFFFF;
+    box-shadow: 2px 2px 0 #0A0F1D;
+  }
+
+  .pillar-badge-lr { background: var(--alert-red); }
+  .pillar-badge-tr { background: var(--yellow); color: #0A0F1D; }
+  .pillar-badge-td { background: var(--accent-blue); }
+
+  .pillar-info {
+    flex: 1;
+  }
+
+  .pillar-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    color: #0A0F1D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pillar-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #0A0F1D;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .pillar-arrow {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  .pillar-pill:hover .pillar-arrow {
+    transform: translateX(4px);
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 2: TWO DOORS (MODELOS DE ATENDIMENTO)
+     -------------------------------------------------------------------------- */
+  .block-two-doors {
+    padding: 80px 0;
+    background: #FFFFFF;
+    border-bottom: var(--border-dark);
+  }
+
+  .two-doors-grid-centered {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .two-door-card {
+    background: #FFFFFF;
+    border: 3px solid #0A0F1D;
+    border-radius: 20px;
+    padding: 38px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 0 #0A0F1D;
+  }
+
+  .two-door-card.featured {
+    border-top: 10px solid var(--accent-blue);
+  }
+
+  .two-door-card:not(.featured) {
+    border-top: 10px solid var(--yellow);
+  }
+
+  .door-clean-list {
+    margin: 24px 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none !important;
+    padding-left: 0 !important;
+  }
+
+  .door-clean-list li {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #0A0F1D;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    list-style: none !important;
+  }
+
+  .door-check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 6px;
+    background: #0A0F1D;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 900;
+    margin-top: 3px;
+  }
+
+  .door-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+  }
+
+  .door-cta .btn {
+    text-align: center;
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 3: PROCESSO LR (4 ETAPAS CENTRALIZADAS COM CONECTORES)
+     -------------------------------------------------------------------------- */
+  .block-process-lr {
+    padding: 80px 0;
+    background: #FFFDF9;
+    border-bottom: var(--border-dark);
+  }
+
+  .process-flow-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .process-step-card {
+    background: #FFFFFF;
+    border: 2.5px solid #0A0F1D;
+    border-radius: 16px;
+    padding: 26px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 0 #0A0F1D;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .process-step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 0 #0A0F1D;
+  }
+
+  .step-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .step-num-badge {
+    background: var(--alert-red);
+    color: #FFFFFF;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 0.95rem;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 2px solid #0A0F1D;
+  }
+
+  .step-agent-indicator {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #0A0F1D;
+    background: #F1F5F9;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1.5px solid #0A0F1D;
+  }
+
+  .process-step-card h3 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    line-height: 1.25;
+    color: #0A0F1D;
+    margin-bottom: 10px;
+  }
+
+  .process-step-card p {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: #0A0F1D;
+    margin: 0;
+  }
+
+  .step-connector-arrow {
+    position: absolute;
+    right: -17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background: #0A0F1D;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 900;
+    z-index: 10;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  }
+
+  .process-step-card:last-child .step-connector-arrow {
+    display: none;
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 4: CALCULADORA (CENTRALIZADA & COM LARGURA CONTROLADA)
+     -------------------------------------------------------------------------- */
+  .block-calculator {
+    padding: 80px 0;
+    background: #FFFFFF;
+    border-bottom: var(--border-dark);
+  }
+
+  .calc-wrapper-centered {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 5: AGENTES IA (GRID EQUILIBRADO 3x2 / NUNCA ISOLADO OU ESPALHADO)
+     -------------------------------------------------------------------------- */
+  .block-ai-agents {
+    padding: 80px 0;
+    background: #F8FAFC;
+    border-bottom: var(--border-dark);
+  }
+
+  /* Grid com padrão 3 colunas e 2 linhas para os 6 agentes - sempre uniforme */
+  .agents-grid-balanced {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .agent-card-clean {
+    background: #FFFFFF;
+    border: 2.5px solid #0A0F1D;
+    border-radius: 18px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 0 #0A0F1D;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .agent-card-clean:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 0 #0A0F1D;
+  }
+
+  .agent-header-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .agent-avatar-circle {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0A0F1D;
+    box-shadow: 2px 2px 0 #0A0F1D;
+  }
+
+  .agent-name-title h3 {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #0A0F1D;
+    margin-bottom: 2px;
+  }
+
+  .agent-role-pill {
+    font-size: 0.92rem;
+    font-weight: 800;
+  }
+
+  .agent-card-clean p {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: #0A0F1D;
+    margin-bottom: 16px;
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .agent-tag-strip {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.85rem;
+    font-weight: 900;
+    padding: 6px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    border: 1.5px solid #0A0F1D;
+  }
+
+  .fluxo-action-bar {
+    margin-top: 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-fluxo {
+    font-size: 1.15rem;
+    padding: 16px 36px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 6px 0 #000000;
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 6: RIGOR CIENTÍFICO (4 MÉTRICAS EQUILIBRADAS)
+     -------------------------------------------------------------------------- */
+  .block-science {
+    padding: 80px 0;
+    background: #FFFFFF;
+    border-bottom: var(--border-dark);
+  }
+
+  .science-metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  /* --------------------------------------------------------------------------
+     BLOCO 7: CLIENTES EM CARDS INDEPENDENTES & CARROSSEL RESPONSIVO
+     -------------------------------------------------------------------------- */
+  .block-clients {
+    padding: 80px 0;
+    background: #F8FAFC;
+    border-bottom: var(--border-dark);
+  }
+
+  /* Carrossel de Cards Independentes de Clientes */
+  .clients-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 48px auto;
+  }
+
+  .clients-cards-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 16px 8px 24px 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #0A0F1D #E2E8F0;
+    justify-content: flex-start;
+  }
+
+  .clients-cards-track::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .clients-cards-track::-webkit-scrollbar-thumb {
+    background: #0A0F1D;
+    border-radius: 4px;
+  }
+
+  .client-single-card {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    background: #FFFFFF;
+    border: 2.5px solid #0A0F1D;
+    border-radius: 16px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 0 #0A0F1D;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .client-single-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 0 #0A0F1D;
+  }
+
+  .client-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .client-card-name {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #0A0F1D;
+    line-height: 1.25;
+  }
+
+  .client-card-category {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0A0F1D;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Testimonials Grid */
+  .testimonials-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .quote-card {
+    background: #FFFFFF;
+    border: 2.5px solid #0A0F1D;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 6px 0 #0A0F1D;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .quote-card.blue { border-left: 10px solid var(--accent-blue); }
+  .quote-card.yellow { border-left: 10px solid var(--yellow); }
+  .quote-card.red { border-left: 10px solid var(--alert-red); }
+
+  .quote-card p {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0A0F1D;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .quote-card cite {
+    font-size: 0.98rem;
+    font-style: normal;
+    font-weight: 800;
+    color: #0A0F1D;
+  }
+
+  /* --------------------------------------------------------------------------
+     RESPONSIVIDADE INTELIGENTE (SEM DESALINHAMENTO NEM SOBREPOSIÇÃO)
+     -------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .hero-split-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-copy {
+      max-width: 100%;
+    }
+
+    .hero-actions-row {
+      justify-content: center;
+    }
+
+    .hero-pillars-stack {
+      max-width: 580px;
+    }
+
+    .agents-grid-balanced {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .science-metrics-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-row {
+      grid-template-columns: 1fr;
+    }
+
+    .two-doors-grid-centered {
+      grid-template-columns: 1fr;
+      max-width: 650px;
+    }
+
+    .process-flow-track {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .step-connector-arrow {
+      display: none; /* Evita quebras em 2x2 */
+    }
+  }
+
+  @media (max-width: 640px) {
+    .block-hero, .block-two-doors, .block-process-lr, .block-calculator, .block-ai-agents, .block-science, .block-clients {
+      padding: 48px 0;
+    }
+
+    .hero-actions-row {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero-actions-row .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .pillar-pill {
+      padding: 16px 18px;
+      gap: 14px;
+    }
+
+    .pillar-badge-circle {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      font-size: 1.2rem;
+    }
+
+    .process-flow-track {
+      grid-template-columns: 1fr;
+    }
+
+    .agents-grid-balanced {
+      grid-template-columns: 1fr;
+    }
+
+    .science-metrics-row {
+      grid-template-columns: 1fr;
+    }
+
+    .client-single-card {
+      flex: 0 0 200px;
+      padding: 20px 14px;
+    }
+  }
+</style>
 </head>
 <body>
+
 <header id="site-header"></header>
 
-<main>
-  <!-- Hero Section -->
-  <section class="hero reveal">
-    <div class="hero-copy">
-      <span class="kicker">Talent Acquisition &amp; Talent Development</span>
-      <h1>Contratações sem fraude.<br>Decisões científicas.</h1>
-      <p>Unimos <strong>30 anos de psicometria suíça</strong> e uma equipe de <strong>Agentes de IA</strong> para desmascarar candidaturas infladas, reduzir o tempo de contratação em semanas e garantir os melhores profissionais para sua empresa.</p>
-      
-      <p style="font-weight:900;font-size:18px;color:var(--primary-dark);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:24px;">
-        Reduced to the max.
-      </p>
+<main class="page-blocks">
 
-      <div class="hero-actions" style="display:flex;gap:14px;flex-wrap:wrap">
-        <a class="btn btn-yellow" href="#como-trabalhar">Como podemos ajudar você?</a>
-        <a class="btn btn-outline" href="contato.html">Agendar Diagnóstico Gratuito</a>
+  <!-- ========================================================================
+       BLOCO 1: HERO SECTION COM PILARES LR / TR / TD (CENTRALIZADO)
+       Independent Block: #block-hero
+       ======================================================================== -->
+  <section class="independent-block block-hero reveal" id="block-hero" data-block="1">
+    <div class="container">
+      <div class="hero-split-grid">
+        
+        <!-- Lado Esquerdo -->
+        <div class="hero-copy">
+          <span class="kicker">Talent Acquisition &amp; Talent Development</span>
+          <h1>Contratações sem fraude.<br>Decisões científicas.</h1>
+          <p class="hero-lead-text">
+            Unimos <strong>30 anos de psicometria suíça</strong> e uma equipe de <strong>Agentes de IA</strong> para desmascarar candidaturas infladas, reduzir o tempo de contratação em semanas e garantir os melhores profissionais para sua empresa.
+          </p>
+          
+          <div class="hero-tagline">Reduced to the max.</div>
+
+          <div class="hero-actions-row">
+            <a class="btn btn-yellow" href="#block-two-doors">Como podemos ajudar você?</a>
+            <a class="btn btn-outline" href="contato.html">Agendar Diagnóstico Gratuito</a>
+          </div>
+        </div>
+
+        <!-- Lado Direito: 3 Pills LR, TR, TD com links diretos -->
+        <div class="hero-pillars-stack" aria-label="Soluções Principais IMDE">
+          <!-- Pill LR -->
+          <a class="pillar-pill" href="lean-recruiting.html" title="Conhecer o Lean Recruiting">
+            <div class="pillar-badge-circle pillar-badge-lr">LR</div>
+            <div class="pillar-info">
+              <div class="pillar-title">
+                <span>Lean Recruiting</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+              <p class="pillar-desc">Triagem inteligente com Detetive Dr. Colombo. Redução de 29 para 11 dias no time-to-hire.</p>
+            </div>
+          </a>
+
+          <!-- Pill TR -->
+          <a class="pillar-pill" href="talent-recruiter.html" title="Conhecer o Talent Recruiter">
+            <div class="pillar-badge-circle pillar-badge-tr">TR</div>
+            <div class="pillar-info">
+              <div class="pillar-title">
+                <span>Talent Recruiter</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+              <p class="pillar-desc">Diagnóstico psicométrico aprofundado e roteiro de entrevista sob medida para o cargo.</p>
+            </div>
+          </a>
+
+          <!-- Pill TD -->
+          <a class="pillar-pill" href="talent-developer.html" title="Conhecer o Talent Developer">
+            <div class="pillar-badge-circle pillar-badge-td">TD</div>
+            <div class="pillar-info">
+              <div class="pillar-title">
+                <span>Talent Developer</span>
+                <span class="pillar-arrow">→</span>
+              </div>
+              <p class="pillar-desc">Desenvolvimento individual direcionado, retenção de talentos e plano de sucessão de liderança.</p>
+            </div>
+          </a>
+        </div>
+
       </div>
-    </div>
-    <div class="hero-visual mondrian-art" aria-label="Composição geométrica inspirada em Mondrian" role="img">
-      <span class="tile tile-white tile-1"></span>
-      <span class="tile tile-red tile-2"></span>
-      <span class="tile tile-white tile-3"></span>
-      <span class="tile tile-gray tile-4"></span>
-      <span class="tile tile-white tile-5"></span>
-      <span class="tile tile-blue tile-6"></span>
-      <span class="tile tile-white tile-7"></span>
-      <span class="tile tile-yellow tile-8"></span>
     </div>
   </section>
 
-  <!-- Two-Door Engagement Section -->
-  <section class="two-doors-section reveal" id="como-trabalhar">
+
+  <!-- ========================================================================
+       BLOCO 2: TWO-DOORS (SEM BULLET POINTS, APENAS ESTRUTURA LIMPA)
+       Independent Block: #block-two-doors
+       ======================================================================== -->
+  <section class="independent-block block-two-doors reveal" id="block-two-doors" data-block="2">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-center-head">
         <span class="kicker">Modelos de Atendimento</span>
         <h2>Como você prefere trabalhar com o IMDE?</h2>
         <p>Escolha o formato ideal para as necessidades e a estrutura atual da sua empresa:</p>
       </div>
 
-      <div class="two-doors-grid">
-        <!-- Door 1: Done-For-You (Headhunting) -->
+      <div class="two-doors-grid-centered">
+        <!-- Door 1: Done-For-You -->
         <article class="two-door-card featured">
           <div>
             <span class="door-tag tag-blue">Opção 1 · Done-For-You</span>
-            <h3>Headhunting Especializado</h3>
-            <p class="door-subtitle">Para Diretores, C-Level e Gestores que precisam preencher posições estratégicas com garantia de resultado e zero esforço operacional.</p>
-            <ul class="door-features">
-              <li><strong>Condução por Consultores Seniores:</strong> Nossos especialistas certificados executam o processo completo de ponta a ponta.</li>
-              <li><strong>Triagem com Agentes IA:</strong> Filtramos milhares de inscritos até encontrar os 3 finalistas verdadeiramente qualificados.</li>
-              <li><strong>Laudo Científico Completo:</strong> Entrevistas guiadas e diagnóstico psicométrico profundo de adequação ao cargo.</li>
-              <li><strong>Garantia de Substituição:</strong> Segurança jurídica e técnica para suas contratações mais críticas.</li>
+            <h3 style="margin-top:12px;">Headhunting Especializado</h3>
+            <p class="door-subtitle" style="margin-top:8px;">Para Diretores, C-Level e Gestores que precisam preencher posições estratégicas com garantia de resultado e zero esforço operacional.</p>
+            
+            <!-- Lista limpa estruturada sem bullet dots -->
+            <ul class="door-clean-list">
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Condução por Consultores Seniores:</strong> Especialistas certificados executam o processo de ponta a ponta.</div>
+              </li>
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Triagem com Agentes IA:</strong> Filtramos milhares de inscritos até encontrar os finalistas verdadeiramente qualificados.</div>
+              </li>
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Laudo Científico Completo:</strong> Entrevistas guiadas e diagnóstico psicométrico de adequação ao cargo.</div>
+              </li>
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Garantia de Substituição:</strong> Segurança jurídica e técnica para suas contratações críticas.</div>
+              </li>
             </ul>
           </div>
           <div class="door-cta">
-            <a class="btn" href="headhunting.html">Conhecer o Headhunting IMDE</a>
-            <a class="btn btn-outline" href="contato.html?tipo=headhunting" style="font-size:0.85rem;padding:10px 16px;">Solicitar Diagnóstico de Vaga →</a>
+            <a class="btn btn-blue" href="headhunting.html">Conhecer o Headhunting IMDE</a>
+            <a class="btn btn-outline" href="contato.html?tipo=headhunting" style="font-size:1rem;font-weight:700;padding:12px 18px;">Solicitar Diagnóstico de Vaga →</a>
           </div>
         </article>
 
@@ -72,335 +867,409 @@
         <article class="two-door-card">
           <div>
             <span class="door-tag tag-yellow">Opção 2 · In-House DIY</span>
-            <h3>Plataforma SaaS &amp; Agentes de IA</h3>
-            <p class="door-subtitle">Para equipes internas de RH e Talent Acquisition que desejam autonomia, alta velocidade e tecnologia anti-fraude em todas as suas vagas.</p>
-            <ul class="door-features">
-              <li><strong>Licenciamento do Datamanager:</strong> Centralize candidaturas, rankings automatizados e laudos na nuvem.</li>
-              <li><strong>Equipe de Agentes IA Integrada:</strong> Conte com Dr. Colombo, Sherlock e Prof. PEP trabalhando para seu time 24/7.</li>
-              <li><strong>Certificação Prática de Usuários:</strong> Treinamos e certificamos seus recrutadores para operar a metodologia com segurança.</li>
-              <li><strong>Redução Drástica de Custos:</strong> Economize até 50% no custo por contratação e acelere seu time-to-hire.</li>
+            <h3 style="margin-top:12px;">Plataforma SaaS &amp; Agentes IA</h3>
+            <p class="door-subtitle" style="margin-top:8px;">Para equipes internas de RH e Talent Acquisition que desejam autonomia, alta velocidade e tecnologia anti-fraude em todas as suas vagas.</p>
+            
+            <!-- Lista limpa estruturada sem bullet dots -->
+            <ul class="door-clean-list">
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Licenciamento do Datamanager:</strong> Centralize candidaturas, rankings automatizados e laudos na nuvem.</div>
+              </li>
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Equipe de Agentes IA Integrada:</strong> Conte com Dr. Colombo, Sherlock e Prof. PEP trabalhando 24/7.</div>
+              </li>
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Certificação Prática de Usuários:</strong> Treinamos seus recrutadores para operar a metodologia com segurança.</div>
+              </li>
+              <li>
+                <span class="door-check-icon">✓</span>
+                <div><strong>Redução Drástica de Custos:</strong> Economize até 50% no custo por contratação e acelere seu time-to-hire.</div>
+              </li>
             </ul>
           </div>
           <div class="door-cta">
             <a class="btn btn-yellow" href="saas.html">Conhecer a Plataforma SaaS</a>
-            <a class="btn btn-outline" href="contato.html?tipo=demo" style="font-size:0.85rem;padding:10px 16px;">Agendar Demonstração do Sistema →</a>
+            <a class="btn btn-outline" href="contato.html?tipo=demo" style="font-size:1rem;font-weight:700;padding:12px 18px;">Agendar Demonstração do Sistema →</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- The AI vs AI Reality Section -->
-  <section class="ai-vs-section reveal">
+
+  <!-- ========================================================================
+       BLOCO 3: PROCESS LR (4 ETAPAS HORIZONTAIS CONECTADAS)
+       Independent Block: #block-process-lr
+       ======================================================================== -->
+  <section class="independent-block block-process-lr reveal" id="block-process-lr" data-block="3">
     <div class="container">
-      <div class="section-intro">
-        <span class="kicker" style="color:#93C5FD">O Recrutamento na Era da IA</span>
-        <h2>IA contra IA: O fim da triagem tradicional de currículos</h2>
-        <p style="color:#CBD5E1">Desde a popularização do GPT-4o, candidatos aprenderam a vencer filtros ATS e maquiar competências. Como seu RH responde?</p>
+      <div class="section-center-head">
+        <span class="kicker" style="color:var(--alert-red);">Metodologia Ágil</span>
+        <h2>Processo Lean Recruiting (LR)</h2>
+        <p>O fluxo em 4 etapas conectadas que substitui a leitura exaustiva de currículos por decisões rápidas e embasadas:</p>
       </div>
 
-      <div class="ai-vs-grid">
-        <div class="ai-card threat">
-          <h3>⚠️ O que o candidato faz hoje</h3>
-          <ul>
-            <li><strong>Otimização por IA:</strong> O candidato alimenta a vaga no ChatGPT e gera um currículo com as palavras-chave exatas para enganar o ATS.</li>
-            <li><strong>Ocultação de fraquezas:</strong> Gaps de carreira, falta de experiência e limitações são maquiados com textos perfeitos em segundos.</li>
-            <li><strong>Cartas de apresentação artificiais:</strong> Textos eloquentes que simulam uma proficiência que o candidato não possui na prática.</li>
-            <li><strong>Sobrecarga do RH:</strong> Recrutadores gastam dias entrevistando candidatos que parecem perfeitos no papel, mas falham na prática.</li>
-          </ul>
+      <div class="process-flow-track">
+        <!-- Etapa 1 -->
+        <div class="process-step-card">
+          <div class="step-card-header">
+            <span class="step-num-badge">Etapa 1</span>
+            <span class="step-agent-indicator">Admina + Hunter</span>
+          </div>
+          <h3>Sourcing &amp; Anúncio</h3>
+          <p>Anúncios estruturados nas tarefas de valor real, atraindo até 500% mais inscritos qualificados e afastando curiosos.</p>
+          <div class="step-connector-arrow">→</div>
         </div>
 
-        <div class="ai-card defense">
-          <h3>🛡️ A Resposta do IMDE: Detetives e Agentes</h3>
-          <ul>
-            <li><strong>Detetive Dr. Colombo (Anti-Fraude):</strong> Analisa padrões, detecta conteúdo gerado por IA, inconsistências e verifica integridade em tempo real.</li>
-            <li><strong>Detetive Sherlock (Job Fit Técnico):</strong> Avalia a lógica das respostas a desafios reais de trabalho, medindo a competência genuína.</li>
-            <li><strong>Ranking dos Melhores:</strong> Em vez de 3.000 currículos inflados, você recebe uma lista limpa dos 100 candidatos mais aptos.</li>
-            <li><strong>Entrevistas de Alto Impacto:</strong> Seus gestores só conversam com quem realmente atende aos requisitos técnicos e expectativas salariais.</li>
-          </ul>
+        <!-- Etapa 2 -->
+        <div class="process-step-card">
+          <div class="step-card-header">
+            <span class="step-num-badge">Etapa 2</span>
+            <span class="step-agent-indicator">Dr. Colombo</span>
+          </div>
+          <h3>Auditoria Anti-Fraude</h3>
+          <p>Detecção instantânea de até 99% das candidaturas geradas por IA, checagem de integridade e filtro salarial.</p>
+          <div class="step-connector-arrow">→</div>
+        </div>
+
+        <!-- Etapa 3 -->
+        <div class="process-step-card">
+          <div class="step-card-header">
+            <span class="step-num-badge">Etapa 3</span>
+            <span class="step-agent-indicator">Sherlock + PEP</span>
+          </div>
+          <h3>Ranking Dinâmico</h3>
+          <p>Triagem objetiva de fit técnico e potencial latente. Os melhores classificados reunidos em uma tela transparente.</p>
+          <div class="step-connector-arrow">→</div>
+        </div>
+
+        <!-- Etapa 4 -->
+        <div class="process-step-card">
+          <div class="step-card-header">
+            <span class="step-num-badge">Etapa 4</span>
+            <span class="step-agent-indicator">Gestores + Victoria</span>
+          </div>
+          <h3>Entrevistas &amp; Decisão</h3>
+          <p>Roteiros direcionados para First Call com os finalistas reais e onboarding assistido com plano de desenvolvimento.</p>
+          <div class="step-connector-arrow">→</div>
         </div>
       </div>
-      
-      <div style="text-align:center;margin-top:40px;">
-        <a class="btn btn-yellow" href="agentes-ia.html">Conheça Nossos Detetives e Agentes de IA →</a>
+
+      <div style="text-align:center;margin-top:36px;">
+        <a class="btn btn-red" href="lean-recruiting.html">Conhecer a Metodologia Completa do Lean Recruiting →</a>
       </div>
     </div>
   </section>
 
-  <!-- The 3 Solution Pillars -->
-  <section class="section reveal" id="solucoes">
+
+  <!-- ========================================================================
+       BLOCO 4: CALCULADORA (SLIDER 6 A 600 CENTRALIZADA)
+       Independent Block: #block-calculator
+       ======================================================================== -->
+  <section class="independent-block block-calculator reveal calc-section" id="block-calculator" data-block="4">
     <div class="container">
-      <div class="section-head"><span class="tick red"></span><h2>A Jornada Completa do Talento</h2></div>
-      <p style="color:var(--text-muted);font-size:1.1rem;margin-bottom:36px;max-width:720px;">
-        Três módulos integrados que cobrem da pré-seleção em massa ao desenvolvimento e retenção da sua liderança:
-      </p>
+      <div class="calc-wrapper-centered">
+        <div class="section-center-head">
+          <span class="kicker kicker-small">Impacto Financeiro Real</span>
+          <h2>Calculadora de Eficiência de Recrutamento</h2>
+          <p>Simule a quantidade de contratações anuais (6 a 600). O custo oculto de triagem manual aparece em tempo real:</p>
+        </div>
 
-      <div class="mondrian">
-        <!-- 1. Lean Recruiting = VERMELHO (#CC0000) -->
-        <article class="card red">
-          <div class="card-visual" aria-hidden="true">
-            <span class="mini-block block-a"></span>
-            <span class="mini-block block-b"></span>
-            <span class="mini-block block-c"></span>
+        <div class="calc-panel" style="margin:0 auto;">
+          <div class="calc-box" style="width:100%;box-sizing:border-box;">
+            <label for="turnoverRange" style="display:block;margin-bottom:12px;font-weight:800;color:#0A0F1D;">Substituições / Contratações por ano (6 a 600)</label>
+            <div class="calc-slider-row">
+              <input id="turnoverRange" type="range" min="6" max="600" value="48" step="1" style="flex:1;">
+              <span id="turnoverValue" style="min-width:60px;text-align:right;font-weight:900;color:#0A0F1D;">48</span>
+            </div>
+            <div class="calc-result" style="margin-top:24px;text-align:center;">
+              <span class="calc-result-label">Custo estimado de ineficiência operacional</span>
+              <strong class="calc-result-value" style="display:block;font-size:clamp(32px, 4vw, 52px);margin:8px 0;color:var(--alert-red);">R$ 297.600</strong>
+              <small style="font-size:1.05rem;font-weight:700;color:#0A0F1D;display:block;">*Com a metodologia IMDE, a economia média gerada é de até 50%.</small>
+            </div>
           </div>
-          <span class="door-tag tag-red" style="margin-bottom:8px;">Recrutamento Ágil</span>
-          <h3>1. Lean Recruiting</h3>
-          <p>Triagem inteligente e automatizada com o Detetive Dr. Colombo para vagas com alto ou baixo volume de inscritos.</p>
-          <ul class="feature-list">
-            <li>Detecção de 99% das candidaturas com IA pelo Dr. Colombo</li>
-            <li>Ranking objetivo dos mais aptos em uma única página</li>
-            <li>Redução comprovada de 29 para 11 dias no time-to-interview</li>
-          </ul>
-          <a class="btn btn-red" href="lean-recruiting.html">Detalhes do Lean Recruiting</a>
-        </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- 2. Talent Recruiter = AMARELO (#FFCF00) -->
-        <article class="card yellow">
-          <div class="card-visual" aria-hidden="true">
-            <span class="mini-block block-a"></span>
-            <span class="mini-block block-b"></span>
-            <span class="mini-block block-c"></span>
-          </div>
-          <span class="door-tag tag-yellow" style="margin-bottom:8px;">Seleção &amp; Perfil</span>
-          <h3>2. Talent Recruiter</h3>
-          <p>Diagnóstico psicométrico aprofundado com critérios de sucesso para saber com certeza quem é o candidato ideal para a vaga.</p>
-          <ul class="feature-list">
-            <li>Mais de 20 questionários específicos por função e cargo</li>
-            <li>Roteiro de entrevista personalizado com perguntas críticas</li>
-            <li>Validação científica: confiabilidade .83 e validade .72</li>
-          </ul>
-          <a class="btn btn-yellow" href="talent-recruiter.html">Detalhes do Talent Recruiter</a>
-        </article>
 
-        <!-- 3. Talent Developer = AZUL (#0000CC) -->
-        <article class="card blue">
-          <div class="card-visual" aria-hidden="true">
-            <span class="mini-block block-a"></span>
-            <span class="mini-block block-b"></span>
-            <span class="mini-block block-c"></span>
-          </div>
-          <span class="door-tag tag-blue" style="margin-bottom:8px;">Desenvolvimento</span>
-          <h3>3. Talent Developer</h3>
-          <p>Desenvolvimento individual direcionado, garantia de sucessão e retenção estratégica de talentos-chave.</p>
-          <ul class="feature-list">
-            <li>Análise de comportamento sob estresse, equipe e vendas</li>
-            <li>Planos de desenvolvimento individuais sem desperdício de verba</li>
-            <li>Máximo Retorno sobre o Investimento em Desenvolvimento (RODI)</li>
-          </ul>
-       <!-- AI Agents Squad Showcase with Official Avatars -->
-  <section class="agents-section reveal">
+  <!-- ========================================================================
+       BLOCO 5: AGENTES DE IA (GRID 3x2 EQUILIBRADO & BOTÃO FLUXO)
+       Independent Block: #block-ai-agents
+       ======================================================================== -->
+  <section class="independent-block block-ai-agents reveal" id="block-ai-agents" data-block="5">
     <div class="container">
-      <div class="section-head"><span class="tick blue"></span><h2>Nossa Equipe de Detetives e Agentes de IA</h2></div>
-      <p style="color:var(--text-muted);font-size:1.1rem;margin-bottom:16px;">
-        O fluxo integrado de 6 especialistas digitais que preparam o terreno para decisões humanas responsáveis:
-      </p>
+      <div class="section-center-head">
+        <span class="kicker" style="color:var(--accent-blue);">Equipe Especializada</span>
+        <h2>Nossa Equipe de Detetives e Agentes de IA</h2>
+        <p>O fluxo integrado de 6 especialistas digitais que preparam o terreno para decisões humanas responsáveis:</p>
+      </div>
 
-      <div class="agents-grid">
+      <!-- Grid equilibrado de 3 colunas x 2 linhas para garantir alinhamento perfeito sem órfãos -->
+      <div class="agents-grid-balanced">
         <!-- 1. Marc Hunter -->
-        <div class="agent-box hunter" style="border-top:6px solid #0F172A;">
-          <div class="agent-header">
-            <img class="agent-avatar-img" src="assets/img/agents/marc-hunter.png" alt="Marc Hunter" style="border-color:#0F172A;">
-            <div class="agent-meta">
+        <article class="agent-card-clean" style="border-top:8px solid #0A0F1D;">
+          <div class="agent-header-row">
+            <img class="agent-avatar-circle" src="assets/img/agents/marc-hunter.png" alt="Marc Hunter">
+            <div class="agent-name-title">
               <h3>Marc Hunter</h3>
-              <span class="agent-role" style="color:#0F172A;">1. Multiposting &amp; Sourcing</span>
+              <span class="agent-role-pill" style="color:#0A0F1D;">1. Multiposting &amp; Sourcing</span>
             </div>
           </div>
           <p>Publica vagas, encontra talentos e aborda profissionais qualificados diretamente com anúncios de alta conversão.</p>
-          <span class="agent-badge-tag" style="background:#0F172A;color:#FFFFFF;">Publicar · Encontrar · Abordar</span>
-        </div>
+          <span class="agent-tag-strip" style="background:#0A0F1D;color:#FFFFFF;">Publicar · Encontrar · Abordar</span>
+        </article>
 
         <!-- 2. Admina -->
-        <div class="agent-box admina" style="border-top:6px solid var(--alert-red);">
-          <div class="agent-header">
-            <img class="agent-avatar-img" src="assets/img/agents/admina.png" alt="Admina" style="border-color:var(--alert-red);">
-            <div class="agent-meta">
+        <article class="agent-card-clean" style="border-top:8px solid var(--alert-red);">
+          <div class="agent-header-row">
+            <img class="agent-avatar-circle" src="assets/img/agents/admina.png" alt="Admina">
+            <div class="agent-name-title">
               <h3>Admina</h3>
-              <span class="agent-role" style="color:var(--alert-red);">2. Agil-Essentia</span>
+              <span class="agent-role-pill" style="color:var(--alert-red);">2. Agil-Essentia</span>
             </div>
           </div>
           <p>Transforma descrições genéricas de vaga em questionários cirúrgicos baseados nas tarefas que geram valor real.</p>
-          <span class="agent-badge-tag" style="background:rgba(204,0,0,0.1);color:var(--alert-red);">Importar · Preparar · Integrar</span>
-        </div>
+          <span class="agent-tag-strip" style="background:#FEE2E2;color:#990000;">Importar · Preparar · Integrar</span>
+        </article>
 
         <!-- 3. Dr Colombo -->
-        <div class="agent-box colombo" style="border-top:6px solid var(--alert-red);">
-          <div class="agent-header">
-            <img class="agent-avatar-img" src="assets/img/agents/dr-colombo.png" alt="Dr. Colombo" style="border-color:var(--alert-red);">
-            <div class="agent-meta">
+        <article class="agent-card-clean" style="border-top:8px solid var(--alert-red);">
+          <div class="agent-header-row">
+            <img class="agent-avatar-circle" src="assets/img/agents/dr-colombo.png" alt="Dr. Colombo">
+            <div class="agent-name-title">
               <h3>Dr. Colombo</h3>
-              <span class="agent-role" style="color:var(--alert-red);">3. Detetive Anti-Fraude</span>
+              <span class="agent-role-pill" style="color:var(--alert-red);">3. Detetive Anti-Fraude</span>
             </div>
           </div>
           <p>Investiga anomalias, detecta 99% de respostas geradas por IA e elimina currículos inflados antes das entrevistas.</p>
-          <span class="agent-badge-tag" style="color:var(--alert-red);background:rgba(204,0,0,0.1);">Verificar · Validar · Proteger</span>
-        </div>
+          <span class="agent-tag-strip" style="color:#990000;background:#FEE2E2;">Verificar · Validar · Proteger</span>
+        </article>
 
         <!-- 4. Sherlock Holmes -->
-        <div class="agent-box sherlock" style="border-top:6px solid var(--yellow);">
-          <div class="agent-header">
-            <img class="agent-avatar-img" src="assets/img/agents/sherlock.png" alt="Sherlock Holmes" style="border-color:var(--yellow);">
-            <div class="agent-meta">
+        <article class="agent-card-clean" style="border-top:8px solid var(--yellow);">
+          <div class="agent-header-row">
+            <img class="agent-avatar-circle" src="assets/img/agents/sherlock.png" alt="Sherlock Holmes">
+            <div class="agent-name-title">
               <h3>Sherlock Holmes</h3>
-              <span class="agent-role" style="color:#855500;">4. Analista de Job Fit</span>
+              <span class="agent-role-pill" style="color:#855500;">4. Analista de Job Fit</span>
             </div>
           </div>
           <p>Analisa a coerência lógica das respostas contra os desafios práticos da função, auditando a real aptidão técnica.</p>
-          <span class="agent-badge-tag" style="background:rgba(255,207,0,0.25);color:#855500;">Analisar · Avaliar · Estimar</span>
-        </div>
+          <span class="agent-tag-strip" style="background:#FEF3C7;color:#78350F;">Analisar · Avaliar · Estimar</span>
+        </article>
 
         <!-- 5. Professor PEP -->
-        <div class="agent-box pep" style="border-top:6px solid var(--yellow);">
-          <div class="agent-header">
-            <img class="agent-avatar-img" src="assets/img/agents/professor-pep.png" alt="Professor PEP" style="border-color:var(--yellow);">
-            <div class="agent-meta">
+        <article class="agent-card-clean" style="border-top:8px solid var(--yellow);">
+          <div class="agent-header-row">
+            <img class="agent-avatar-circle" src="assets/img/agents/professor-pep.png" alt="Professor PEP">
+            <div class="agent-name-title">
               <h3>Professor PEP</h3>
-              <span class="agent-role" style="color:#855500;">5. Avaliador de Potencial</span>
+              <span class="agent-role-pill" style="color:#855500;">5. Avaliador de Potencial</span>
             </div>
           </div>
           <p>Avalia pontos fortes latentes, probabilidade de alta performance futura e adaptabilidade cultural à sua empresa.</p>
-          <span class="agent-badge-tag" style="background:rgba(255,207,0,0.25);color:#855500;">Avaliar · Prever · Recomendar</span>
-        </div>
+          <span class="agent-tag-strip" style="background:#FEF3C7;color:#78350F;">Avaliar · Prever · Recomendar</span>
+        </article>
 
         <!-- 6. Victoria Discret -->
-        <div class="agent-box victoria" style="border-top:6px solid var(--accent-blue);">
-          <div class="agent-header">
-            <img class="agent-avatar-img" src="assets/img/agents/victoria-discret.png" alt="Victoria Discret" style="border-color:var(--accent-blue);">
-            <div class="agent-meta">
+        <article class="agent-card-clean" style="border-top:8px solid var(--accent-blue);">
+          <div class="agent-header-row">
+            <img class="agent-avatar-circle" src="assets/img/agents/victoria-discret.png" alt="Victoria Discret">
+            <div class="agent-name-title">
               <h3>Victoria Discret</h3>
-              <span class="agent-role" style="color:var(--accent-blue);">6. Coach de Sucesso</span>
+              <span class="agent-role-pill" style="color:var(--accent-blue);">6. Coach de Sucesso</span>
             </div>
           </div>
           <p>Apoia o onboarding nos primeiros 6 meses, orientando lideranças com base nos pontos de desenvolvimento mapeados.</p>
-          <span class="agent-badge-tag" style="color:var(--accent-blue);background:rgba(0,0,204,0.1);">Acompanhar · Desenvolver · Assegurar</span>
-        </div>
+          <span class="agent-tag-strip" style="color:#000099;background:#DBEAFE;">Acompanhar · Desenvolver · Assegurar</span>
+        </article>
       </div>
 
-      <div style="text-align:center;margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-yellow" href="agentes-ia.html">Ver Arquitetura Completa do Fluxo Multiagente →</a>
-        <a class="btn btn-outline" href="documentacao.html">Acessar Biblioteca Científica &amp; Downloads</a>
+      <!-- Botão FLUXO em Destaque Conforme Esboço -->
+      <div class="fluxo-action-bar">
+        <a class="btn btn-yellow btn-fluxo" href="agentes-ia.html">
+          ⚡ FLUXO MULTIAGENTE COMPLETO ➔
+        </a>
+        <p style="font-size:1.05rem;font-weight:700;color:#0A0F1D;margin:0;">Veja como os 6 agentes operam integrados em cada etapa da contratação</p>
       </div>
     </div>
   </section>
 
-  <!-- Science & Numbers Section -->
-  <section class="science-section reveal">
-    <div class="container">
-      <div class="section-head"><span class="tick yellow"></span><h2>Rigor Científico Suíço Desde 1996</h2></div>
-      <p style="color:var(--text-muted);font-size:1.1rem;">
-        Ao contrário de testes genéricos de internet, as ferramentas IMDE são construídas sobre dados estatísticos consolidados e contínua validação empírica.
-      </p>
 
-      <div class="stats-highlight-grid">
-        <div class="stat-box">
+  <!-- ========================================================================
+       BLOCO 6: RIGOR CIENTÍFICO (4 MÉTRICAS CENTRALIZADAS)
+       Independent Block: #block-science
+       ======================================================================== -->
+  <section class="independent-block block-science reveal" id="block-science" data-block="6">
+    <div class="container">
+      <div class="section-center-head">
+        <span class="kicker" style="color:var(--yellow);">Validação Psicométrica</span>
+        <h2>Rigor Científico Suíço Desde 1996</h2>
+        <p>Ao contrário de testes genéricos de internet, as ferramentas IMDE são construídas sobre dados estatísticos consolidados:</p>
+      </div>
+
+      <div class="science-metrics-row">
+        <div class="stat-box" style="text-align:center;">
           <div class="stat-box-val blue">30+</div>
           <div class="stat-box-label">Anos de Experiência</div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box" style="text-align:center;">
           <div class="stat-box-val">0.83</div>
           <div class="stat-box-label">Confiabilidade Média</div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box" style="text-align:center;">
           <div class="stat-box-val">0.72</div>
           <div class="stat-box-label">Validade Preditiva</div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box" style="text-align:center;">
           <div class="stat-box-val">N &gt; 5.000</div>
           <div class="stat-box-label">Amostra Renormada (2023)</div>
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:20px;">
+      <div style="text-align:center;margin-top:36px;">
         <a class="btn btn-outline" href="ciencia.html">Entenda a Metodologia Científica e Normas Psicométricas →</a>
       </div>
     </div>
   </section>
 
-  <!-- Enterprise Proof & Clients -->
-  <section class="section reveal">
+
+  <!-- ========================================================================
+       BLOCO 7: CLIENTES EM CARDS INDEPENDENTES & CARROSSEL RESPONSIVO
+       Independent Block: #block-clients
+       ======================================================================== -->
+  <section class="independent-block block-clients reveal" id="block-clients" data-block="7">
     <div class="container">
-      <div class="section-head"><span class="tick blue"></span><h2>Quem Confia na Tecnologia IMDE</h2></div>
-      <p style="color:var(--text-muted);margin-bottom:28px;">Líderes de mercado que transformaram sua eficiência de contratação e desenvolvimento:</p>
-      
-      <div class="clients">
-        <span>Azul Linhas Aéreas</span>
-        <span>SCANIA</span>
-        <span>Toyota</span>
-        <span>Airbus Space &amp; Defence</span>
-        <span>Porsche Zentrum Berlin</span>
-        <span>Mr. Cheney</span>
-        <span>ADAMA</span>
-        <span>Solvay</span>
-        <span>SWICA</span>
-        <span>Bank Sarasin</span>
-        <span>Valiant Bank</span>
-        <span>Die Post</span>
+      <div class="section-center-head">
+        <span class="kicker" style="color:var(--accent-blue);">Casos de Sucesso</span>
+        <h2>Quem Confia na Tecnologia IMDE</h2>
+        <p>Líderes de mercado que transformaram sua eficiência de contratação e desenvolvimento:</p>
       </div>
 
-      <div class="quotes" style="margin-top:40px;">
-        <blockquote class="quote">
+      <!-- Carrossel de Cards Individuais de Clientes -->
+      <div class="clients-carousel-wrapper" aria-label="Carrossel de Clientes">
+        <div class="clients-cards-track">
+          <!-- Card 1: Azul -->
+          <div class="client-single-card">
+            <span class="client-card-icon">✈️</span>
+            <div class="client-card-name">Azul Linhas Aéreas</div>
+            <span class="client-card-category">Aviação Comercial</span>
+          </div>
+
+          <!-- Card 2: SCANIA -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🚛</span>
+            <div class="client-card-name">SCANIA</div>
+            <span class="client-card-category">Veículos Comerciais</span>
+          </div>
+
+          <!-- Card 3: Toyota -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🚗</span>
+            <div class="client-card-name">Toyota</div>
+            <span class="client-card-category">Automotivo Global</span>
+          </div>
+
+          <!-- Card 4: Airbus -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🛰️</span>
+            <div class="client-card-name">Airbus Space &amp; Defence</div>
+            <span class="client-card-category">Aeroespacial &amp; Defesa</span>
+          </div>
+
+          <!-- Card 5: Porsche -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🏎️</span>
+            <div class="client-card-name">Porsche Zentrum Berlin</div>
+            <span class="client-card-category">Automotivo Premium</span>
+          </div>
+
+          <!-- Card 6: Mr. Cheney -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🍪</span>
+            <div class="client-card-name">Mr. Cheney</div>
+            <span class="client-card-category">Franquias &amp; Alimentação</span>
+          </div>
+
+          <!-- Card 7: ADAMA -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🌱</span>
+            <div class="client-card-name">ADAMA</div>
+            <span class="client-card-category">Agronegócio</span>
+          </div>
+
+          <!-- Card 8: Solvay -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🧪</span>
+            <div class="client-card-name">Solvay</div>
+            <span class="client-card-category">Indústria Química</span>
+          </div>
+
+          <!-- Card 9: SWICA -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🏥</span>
+            <div class="client-card-name">SWICA</div>
+            <span class="client-card-category">Saúde Suíça</span>
+          </div>
+
+          <!-- Card 10: Bank Sarasin -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🏛️</span>
+            <div class="client-card-name">Bank Sarasin</div>
+            <span class="client-card-category">Private Banking</span>
+          </div>
+
+          <!-- Card 11: Valiant Bank -->
+          <div class="client-single-card">
+            <span class="client-card-icon">🏦</span>
+            <div class="client-card-name">Valiant Bank</div>
+            <span class="client-card-category">Serviços Financeiros</span>
+          </div>
+
+          <!-- Card 12: Die Post -->
+          <div class="client-single-card">
+            <span class="client-card-icon">📮</span>
+            <div class="client-card-name">Die Post</div>
+            <span class="client-card-category">Logística Nacional Suíça</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials / Depoimentos Reais -->
+      <div class="testimonials-row">
+        <article class="quote-card red">
           <p>“Em poucas horas por semana, faço o que antes era desgastante em três.”</p>
-          <cite>Mônica D'Elboux — Mr. Cheney (Redução do time-to-interview de 29 para 11 dias)</cite>
-        </blockquote>
-        <blockquote class="quote blue">
+          <cite>Mônica D'Elboux — Mr. Cheney (Redução de 29 para 11 dias)</cite>
+        </article>
+        <article class="quote-card blue">
           <p>“Em um único fim de semana, 3.135 candidaturas foram reduzidas com precisão às melhores 250. Sem o sistema, seria impossível.”</p>
           <cite>J. Castellano — Azul Linhas Aéreas</cite>
-        </blockquote>
-        <blockquote class="quote yellow">
+        </article>
+        <article class="quote-card yellow">
           <p>“Adequado para a seleção de aprendizes e altamente eficiente para contratações técnicas.”</p>
           <cite>Frauke Bauer — Airbus Space &amp; Defence</cite>
-        </blockquote>
+        </article>
       </div>
 
-      <div style="display:flex;gap:14px;margin-top:32px;justify-content:center;flex-wrap:wrap">
+      <div style="display:flex;gap:14px;margin-top:36px;justify-content:center;flex-wrap:wrap">
         <a class="btn btn-yellow" href="clientes.html">Ver todos os clientes</a>
         <a class="btn btn-outline" href="depoimentos.html">Ler depoimentos completos</a>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Turnover Calculator (Slider 1 a 100) -->
-  <section class="section reveal calc-section">
-    <div class="container">
-      <div class="section-head"><span class="tick red"></span><h2>Calculadora de Eficiência de Recrutamento</h2></div>
-      <div class="calc-panel">
-        <div class="calc-copy">
-          <p class="kicker kicker-small">Impacto Financeiro Real</p>
-          <h3>Quanto o turnover e vagas abertas custam para sua empresa?</h3>
-          <p>Simule a quantidade de contratações/substituições anuais. O custo oculto de triagem manual e tempo de vaga aberta aparece em tempo real.</p>
-        </div>
-        <div class="calc-box">
-          <label for="turnoverRange">Substituições / Contratações por ano (1 a 100)</label>
-          <div class="calc-slider-row">
-            <input id="turnoverRange" type="range" min="1" max="100" value="25">
-            <span id="turnoverValue">25</span>
-          </div>
-          <div class="calc-result">
-            <span class="calc-result-label">Custo estimado de ineficiência</span>
-            <strong class="calc-result-value">R$ 155.000</strong>
-            <small style="color:var(--text-muted);font-size:0.8rem;margin-top:6px;">*Com a metodologia IMDE, a economia média gerada é de até 50%.</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lead Capture / Conversion Hook CTA -->
-  <section class="cta reveal">
-    <div class="container cta-inner">
-      <h2>Pronto para eliminar fraudes e contratar com segurança máxima?</h2>
-      <p>Agende um <strong>Diagnóstico de Eficiência de 15 minutos</strong> com nossos consultores ou solicite uma demonstração da plataforma de IA.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
-        <a class="btn btn-yellow" href="contato.html">Solicitar Diagnóstico Gratuito</a>
-        <a class="btn btn-outline-white" href="saas.html">Conhecer Plataforma SaaS</a>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer id="site-footer"></footer>
 <script src="assets/js/components.js"></script>
 
 <script>
+  // Scroll Reveal Observer
   const revealElements = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -413,11 +1282,13 @@
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  // Calculadora Interativa (Range 6 a 600)
   const turnoverRange = document.getElementById('turnoverRange');
   const turnoverValue = document.getElementById('turnoverValue');
   const calcResultValue = document.querySelector('.calc-result-value');
 
   function updateTurnoverEstimate() {
+    if (!turnoverRange || !turnoverValue || !calcResultValue) return;
     const exitsPerYear = Number(turnoverRange.value);
     const costPerExit = 6200;
     const total = exitsPerYear * costPerExit;

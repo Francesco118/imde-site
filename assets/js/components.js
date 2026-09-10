@@ -82,10 +82,10 @@
     return ''+
       '<div class="footer-grid">'+
         '<div><img class="logo-mark logo-classic footer-logo" src="assets/img/logo-imde-classic-removebg-preview.png" alt="IMDE logo">'+
-          '<p style="margin-top:14px;font-weight:900;font-size:22px;letter-spacing:-0.03em;color:var(--primary-dark)">IMDE</p>'+
-          '<p style="font-weight:800;font-size:14px;text-transform:uppercase;color:var(--accent-blue);margin-top:4px">Reduced to the max.</p>'+
-          '<p style="margin-top:10px;color:#475569;font-size:0.88rem;line-height:1.6">Pioneirismo em psicometria preditiva suíça e ecossistema de inteligência artificial multi-agente desde 1996.</p>'+
-          '<p style="margin-top:8px;font-size:0.8rem;color:#64748b"><strong>Instituto Multidisciplinar de Desenvolvimento Executivo</strong><br>InSyst Master Data Experts AG</p>'+
+          '<p style="margin-top:14px;font-weight:900;font-size:26px;letter-spacing:-0.03em;color:#FFFFFF">IMDE</p>'+
+          '<p style="font-weight:900;font-size:16px;text-transform:uppercase;color:#FFCF00;margin-top:4px">Reduced to the max.</p>'+
+          '<p style="margin-top:12px;color:#FFFFFF;font-size:1.05rem;line-height:1.6;font-weight:500">Pioneirismo em psicometria preditiva suíça e ecossistema de inteligência artificial multi-agente desde 1996.</p>'+
+          '<p style="margin-top:10px;font-size:0.95rem;color:#FFFFFF;line-height:1.5"><strong>Instituto Multidisciplinar de Desenvolvimento Executivo</strong><br>InSyst Master Data Experts AG</p>'+
         '</div>'+
         '<div><h4>Soluções &amp; Ciência</h4>'+
           '<a href="lean-recruiting.html">Lean Recruiting</a>'+
@@ -102,15 +102,15 @@
           '<a href="clientes.html">Clientes &amp; Casos de Sucesso</a>'+
           '<a href="depoimentos.html">Depoimentos Reais</a>'+
           '<a href="parceiros.html">Rede Internacional de Parceiros</a>'+
-          '<a href="seja-parceiro.html" style="color:var(--accent-blue)">Seja um Parceiro Certificado →</a>'+
+          '<a href="seja-parceiro.html" style="color:#FFCF00;font-weight:800">Seja um Parceiro Certificado →</a>'+
         '</div>'+
         '<div><h4>Contato &amp; Acesso</h4>'+
-          '<p style="font-size:0.88rem"><strong>InSyst Master Data Experts AG</strong><br>Hinterbergstrasse 18, CH-6312 Steinhausen — Suíça</p>'+
-          '<a href="mailto:ddt_imde@imde.net" style="margin-top:6px">ddt_imde@imde.net</a>'+
-          '<a href="tel:+41793003116">+41 79 300 31 16</a>'+
-          '<div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">'+
-            '<a href="login.html" class="btn" style="padding:8px 16px;font-size:0.8rem;background:var(--primary-dark)">Login Datamanager</a>'+
-            '<a href="contato.html" class="btn" style="padding:8px 16px;font-size:0.8rem;background:var(--accent-blue)">Diagnóstico Gratuito</a>'+
+          '<p style="font-size:1.02rem;color:#FFFFFF;line-height:1.6"><strong>InSyst Master Data Experts AG</strong><br>Hinterbergstrasse 18, CH-6312 Steinhausen — Suíça</p>'+
+          '<a href="mailto:ddt_imde@imde.net" style="margin-top:8px;color:#FFFFFF;font-size:1.05rem;font-weight:700">ddt_imde@imde.net</a>'+
+          '<a href="tel:+41793003116" style="color:#FFFFFF;font-size:1.05rem;font-weight:700">+41 79 300 31 16</a>'+
+          '<div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">'+
+            '<a href="login.html" class="btn btn-outline-white" style="padding:10px 18px;font-size:0.95rem">Login Datamanager</a>'+
+            '<a href="contato.html" class="btn btn-yellow" style="padding:10px 18px;font-size:0.95rem">Diagnóstico Gratuito</a>'+
           '</div>'+
         '</div>'+
       '</div>'+
