@@ -20,7 +20,7 @@
     </div>
   </section>
 
-  <!-- Interactive Google Calendar Booking Section -->
+  <!-- Interactive Zoho Bookings Section -->
   <section class="section reveal" id="agendar" style="padding-top:20px;padding-bottom:40px;">
     <div class="container">
       <div class="calendar-card">
@@ -33,9 +33,20 @@
         </p>
 
         <div class="calendar-wrapper">
-          <!-- Google Calendar Appointment Scheduling begin -->
-          <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1slaf9J0YETDSupbPI5MJ3MXsZ9RxfU3O7BM05evPQI69DaKC9dOVpyxMuG7pk0Jbh7nHAn6Q_?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-          <!-- end Google Calendar Appointment Scheduling -->
+          <!-- Zoho Bookings Appointment Scheduling begin -->
+          <script src="https://bookings.nimbuspop.com/assets/embed.js"></script>
+          <div id="inline-container"></div>
+          <script>
+            // Initialize inline embed after script loads
+            window.onload = function() {
+              Bookings.inlineEmbed({
+                url: "https://imde.zohobookings.com/portal-embed#/4947223000000036008",
+                parent: "#inline-container",
+                height: "600px"
+              });
+            };
+          </script>
+          <!-- end Zoho Bookings Appointment Scheduling -->
         </div>
       </div>
     </div>
