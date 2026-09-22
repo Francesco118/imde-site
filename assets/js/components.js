@@ -62,7 +62,7 @@
         '<button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>'+
         '<nav class="nav" aria-label="Principal">'+items+
           '<div class="header-actions">'+
-            '<a class="login-link" href="login.html">Login ↗</a>'+
+            '<a class="login-link" href="login.html">Login</a>'+
             '<a class="btn btn-primary demo-link" href="contato.html">Agendar Demonstração</a>'+
             '<div class="lang"><button class="lang-btn" id="langBtn" type="button">POR ▾</button><div class="lang-panel" id="langPanel"><ul>'+langItems+'</ul></div></div>'+
           '</div>'+
@@ -159,19 +159,95 @@
 
     var h=document.getElementById('site-header'); if(h) h.innerHTML=headerHTML();
     var f=document.getElementById('site-footer'); if(f) f.innerHTML=footerHTML();
+    var sections=document.querySelectorAll('section');
+    sections.forEach(function(section){section.classList.add('reveal');});
+    if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var revealObserver=new IntersectionObserver(function(entries, observer){
+        entries.forEach(function(entry){
+          if(!entry.isIntersecting) return;
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      document.querySelectorAll('.reveal').forEach(function(element){revealObserver.observe(element);});
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(element){element.classList.add('active');});
+    }
     var ham=document.getElementById('hamburger'), mm=document.getElementById('mobileMenu');
     if(ham&&mm) ham.addEventListener('click',function(){
       mm.classList.toggle('open'); ham.setAttribute('aria-expanded',mm.classList.contains('open'));
     });
     var lb=document.getElementById('langBtn'), lp=document.getElementById('langPanel');
-    if(lb&&lp) lb.addEventListener('click',function(e){e.stopPropagation();lp.classList.toggle('open');});
-    document.addEventListener('click',function(e){
-      if(lp&&!e.target.closest('.lang')) lp.classList.remove('open');
-      if(!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown').forEach(function(d){d.classList.remove('open');});
-    });
-    document.querySelectorAll('.dropdown>button').forEach(function(b){
-      b.addEventListener('click',function(e){e.stopPropagation();b.parentElement.classList.toggle('open');});
-    });
+    // Dropdowns and lang panels are handled entirely by CSS :hover and :focus-within
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  function initNeuralCanvas() {
+    var canvas = document.getElementById('neural-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var particleCount = 40; // Number of nodes
+    var maxDistance = 150; // Distance to connect lines
+
+    function resize() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    for (var i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#FFFFFF'; // White nodes
+      ctx.strokeStyle = '#FFFFFF'; // White lines
+      
+      for (var i = 0; i < particleCount; i++) {
+        var p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (var j = i + 1; j < particleCount; j++) {
+          var p2 = particles[j];
+          var dx = p.x - p2.x;
+          var dy = p.y - p2.y;
+          var distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.globalAlpha = 1 - (distance / maxDistance);
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  if(document.readyState==='loading') {
+    document.addEventListener('DOMContentLoaded', function() { init(); initNeuralCanvas(); });
+  } else {
+    init();
+    initNeuralCanvas();
+  }
 })();
