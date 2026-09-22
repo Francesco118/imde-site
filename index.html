@@ -68,6 +68,10 @@
     margin-bottom: 12px;
   }
 
+  .heading-phrase-nowrap {
+    white-space: nowrap;
+  }
+
   .section-center-head p {
     font-size: 1.15rem;
     color: #0A0F1D;
@@ -80,9 +84,22 @@
      BLOCO 1: HERO COM PILLS LR / TR / TD
      -------------------------------------------------------------------------- */
   .block-hero {
+    position: relative;
     padding: 70px 0 80px;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    background: #0A0F1D;
     border-bottom: var(--border-dark);
+    overflow: hidden;
+  }
+
+  #neural-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
   }
 
   .hero-split-grid {
@@ -104,14 +121,14 @@
     line-height: 1.12;
     margin: 12px 0 20px;
     letter-spacing: -0.03em;
-    color: #0A0F1D;
+    color: #FFFFFF;
   }
 
   .hero-lead-text {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: #0A0F1D;
+    color: #FFFFFF;
     font-weight: 500;
   }
 
@@ -119,7 +136,7 @@
     font-family: var(--font-display);
     font-weight: 900;
     font-size: 1.15rem;
-    color: #0A0F1D;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 28px;
@@ -243,9 +260,9 @@
   /* --------------------------------------------------------------------------
      BLOCO 2: TWO DOORS (MODELOS DE ATENDIMENTO)
      -------------------------------------------------------------------------- */
-  .block-two-doors {
+  .block-two-doors-dark {
     padding: 80px 0;
-    background: #FFFFFF;
+    background: #0A0F1D;
     border-bottom: var(--border-dark);
   }
 
@@ -274,6 +291,7 @@
 
   .two-door-card:not(.featured) {
     border-top: 10px solid var(--yellow);
+    border-top: 10px solid var(--alert-red);
   }
 
   .door-clean-list {
@@ -357,8 +375,10 @@
 
   .step-card-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 12px;
     margin-bottom: 14px;
   }
 
@@ -371,12 +391,16 @@
     padding: 4px 12px;
     border-radius: 6px;
     border: 2px solid #0A0F1D;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .step-agent-pill {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    width: 100%;
+    min-width: 0;
     background: #F1F5F9;
     border: 1.5px solid #0A0F1D;
     border-radius: 999px;
@@ -386,6 +410,8 @@
   .step-agent-avatars {
     display: flex;
     align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
   }
 
   .step-avatar-img {
@@ -395,7 +421,6 @@
     object-fit: cover;
     border: 1.5px solid #0A0F1D;
     background: #FFFFFF;
-    margin-left: -8px;
     box-shadow: 1px 1px 0 #0A0F1D;
   }
 
@@ -407,7 +432,8 @@
     font-size: 0.86rem;
     font-weight: 800;
     color: #0A0F1D;
-    white-space: nowrap;
+    min-width: 0;
+    line-height: 1.2;
   }
 
   .process-step-card h3 {
@@ -453,8 +479,17 @@
      -------------------------------------------------------------------------- */
   .block-calculator {
     padding: 80px 0;
-    background: #FFFFFF;
+    background: #0A0F1D;
     border-bottom: var(--border-dark);
+  }
+
+  .block-calculator .section-center-head h2,
+  .block-calculator .section-center-head p {
+    color: #FFFFFF;
+  }
+
+  .block-calculator .section-center-head .kicker {
+    color: #FFCF00;
   }
 
   .calc-wrapper-centered {
@@ -572,8 +607,13 @@
      -------------------------------------------------------------------------- */
   .block-science {
     padding: 80px 0;
-    background: #FFFFFF;
+    background: #0A0F1D;
     border-bottom: var(--border-dark);
+  }
+
+  .block-science .section-center-head h2,
+  .block-science .section-center-head p {
+    color: #FFFFFF;
   }
 
   .science-metrics-row {
@@ -591,6 +631,11 @@
     padding: 80px 0;
     background: #F8FAFC;
     border-bottom: var(--border-dark);
+  }
+
+   .section-center-head h2,
+   .section-center-head p {
+    color: #0A0F1D;
   }
 
   /* Carrossel de Cards Independentes de Clientes */
@@ -683,8 +728,8 @@
     justify-content: space-between;
   }
 
-  .quote-card.blue { border-left: 10px solid var(--accent-blue); }
-  .quote-card.yellow { border-left: 10px solid var(--yellow); }
+  .quote-card.blue { border-left: 10px solid var(--alert-red); }
+  .quote-card.yellow { border-left: 10px solid var(--alert-red); }
   .quote-card.red { border-left: 10px solid var(--alert-red); }
 
   .quote-card p {
@@ -752,7 +797,7 @@
   }
 
   @media (max-width: 640px) {
-    .block-hero, .block-two-doors, .block-process-lr, .block-calculator, .block-ai-agents, .block-science, .block-clients {
+    .block-hero, .block-two-doors-dark, .block-process-lr, .block-calculator, .block-ai-agents, .block-science, .block-clients {
       padding: 48px 0;
     }
 
@@ -808,7 +853,8 @@
        Independent Block: #block-hero
        ======================================================================== -->
   <section class="independent-block block-hero reveal" id="block-hero" data-block="1">
-    <div class="container">
+    <canvas id="neural-canvas"></canvas>
+    <div class="container" style="position:relative; z-index:2;">
       <div class="hero-split-grid">
         
         <!-- Lado Esquerdo -->
@@ -880,7 +926,7 @@
 
       </div>
     </div>
-  </section>
+  </section> 
 
 
   <!-- ========================================================================
@@ -932,7 +978,7 @@
         <!-- Door 2: In-House SaaS Platform -->
         <article class="two-door-card">
           <div>
-            <span class="door-tag tag-yellow">Opção 2 · In-House DIY</span>
+            <span class="door-tag tag-red">Opção 2 · In-House DIY</span>
             <h3 style="margin-top:12px;">Plataforma SaaS &amp; Agentes IA</h3>
             <p class="door-subtitle" style="margin-top:8px;">Para equipes internas de RH e Talent Acquisition que desejam autonomia, alta velocidade e tecnologia anti-fraude em todas as suas vagas.</p>
             
@@ -957,7 +1003,7 @@
             </ul>
           </div>
           <div class="door-cta">
-            <a class="btn btn-yellow" href="saas.html">Conhecer a Plataforma SaaS</a>
+            <a class="btn btn-red" href="saas.html">Conhecer a Plataforma SaaS</a>
             <a class="btn btn-outline" href="contato.html?tipo=demo" style="font-size:1rem;font-weight:700;padding:12px 18px;">Agendar Demonstração do Sistema →</a>
           </div>
         </article>
@@ -974,7 +1020,7 @@
     <div class="container">
       <div class="section-center-head">
         <span class="kicker" style="color:var(--alert-red);">Metodologia Ágil</span>
-        <h2>Processo Lean Recruiting (LR)</h2>
+        <h2>Processo Lean Recruiting</h2>
         <p>O fluxo em 4 etapas conectadas que substitui a leitura exaustiva de currículos por decisões rápidas e embasadas:</p>
       </div>
 
@@ -1070,8 +1116,8 @@
           <div class="calc-box" style="width:100%;box-sizing:border-box;">
             <label for="turnoverRange" style="display:block;margin-bottom:12px;font-weight:800;color:#0A0F1D;">Substituições / Contratações por ano (6 a 600)</label>
             <div class="calc-slider-row">
-              <input id="turnoverRange" type="range" min="6" max="600" value="48" step="1" style="flex:1;">
-              <span id="turnoverValue" style="min-width:60px;text-align:right;font-weight:900;color:#0A0F1D;">48</span>
+              <input id="turnoverRange" type="range" min="6" max="600" value="48" step="1" style="flex:1; accent-color:#CC0000;">
+              <span id="turnoverValue" style="min-width:60px;text-align:right;font-weight:900;color:#CC0000;">48</span>
             </div>
             <div class="calc-result" style="margin-top:24px;text-align:center;">
               <span class="calc-result-label">Custo estimado de ineficiência operacional</span>
@@ -1093,7 +1139,7 @@
     <div class="container">
       <div class="section-center-head">
         <span class="kicker" style="color:var(--accent-blue);">Equipe Especializada</span>
-        <h2>Nossa Equipe de Detetives e Agentes de IA</h2>
+        <h2>Nossa Equipe de Detetives e <span class="heading-phrase-nowrap">Agentes de IA</span></h2>
         <p>O fluxo integrado de 6 especialistas digitais que preparam o terreno para decisões humanas responsáveis:</p>
       </div>
 
@@ -1235,7 +1281,7 @@
     <div class="container">
       <div class="section-center-head">
         <span class="kicker" style="color:var(--accent-blue);">Casos de Sucesso</span>
-        <h2>Quem Confia na Tecnologia IMDE</h2>
+        <h2>Quem Confiou na Tecnologia IMDE</h2>
         <p>Líderes de mercado que transformaram sua eficiência de contratação e desenvolvimento:</p>
       </div>
 
@@ -1244,85 +1290,82 @@
         <div class="clients-cards-track">
           <!-- Card 1: Azul -->
           <div class="client-single-card">
-            <span class="client-card-icon">✈️</span>
+            <img
+              class="client-logo"
+              src="assets/img/clients/azul.svg"
+              alt="Azul Linhas Aéreas"
+            >
             <div class="client-card-name">Azul Linhas Aéreas</div>
             <span class="client-card-category">Aviação Comercial</span>
           </div>
 
           <!-- Card 2: SCANIA -->
           <div class="client-single-card">
-            <span class="client-card-icon">🚛</span>
+            <img class="client-logo" src="assets/img/clients/scania.svg" alt="SCANIA">
             <div class="client-card-name">SCANIA</div>
             <span class="client-card-category">Veículos Comerciais</span>
           </div>
 
           <!-- Card 3: Toyota -->
           <div class="client-single-card">
-            <span class="client-card-icon">🚗</span>
+            <img class="client-logo" src="assets/img/clients/toyota.svg" alt="Toyota">
             <div class="client-card-name">Toyota</div>
             <span class="client-card-category">Automotivo Global</span>
           </div>
 
           <!-- Card 4: Airbus -->
           <div class="client-single-card">
-            <span class="client-card-icon">🛰️</span>
+            <img class="client-logo" src="assets/img/clients/airbus.svg" alt="Airbus Space &amp; Defence">
             <div class="client-card-name">Airbus Space &amp; Defence</div>
             <span class="client-card-category">Aeroespacial &amp; Defesa</span>
           </div>
 
           <!-- Card 5: Porsche -->
           <div class="client-single-card">
-            <span class="client-card-icon">🏎️</span>
+            <img class="client-logo" src="assets/img/clients/porsche.svg" alt="Porsche Zentrum Berlin">
             <div class="client-card-name">Porsche Zentrum Berlin</div>
             <span class="client-card-category">Automotivo Premium</span>
           </div>
 
           <!-- Card 6: Mr. Cheney -->
           <div class="client-single-card">
-            <span class="client-card-icon">🍪</span>
+            <img class="client-logo" src="assets/img/clients/mrcheney.svg" alt="Mr. Cheney">
             <div class="client-card-name">Mr. Cheney</div>
             <span class="client-card-category">Franquias &amp; Alimentação</span>
           </div>
 
           <!-- Card 7: ADAMA -->
           <div class="client-single-card">
-            <span class="client-card-icon">🌱</span>
+            <img class="client-logo" src="assets/img/clients/adama.svg" alt="ADAMA">
             <div class="client-card-name">ADAMA</div>
             <span class="client-card-category">Agronegócio</span>
           </div>
 
           <!-- Card 8: Solvay -->
           <div class="client-single-card">
-            <span class="client-card-icon">🧪</span>
+            <img class="client-logo" src="assets/img/clients/solvay.svg" alt="Solvay">
             <div class="client-card-name">Solvay</div>
             <span class="client-card-category">Indústria Química</span>
           </div>
 
           <!-- Card 9: SWICA -->
           <div class="client-single-card">
-            <span class="client-card-icon">🏥</span>
+            <img class="client-logo" src="assets/img/clients/swica.svg" alt="SWICA">
             <div class="client-card-name">SWICA</div>
             <span class="client-card-category">Saúde Suíça</span>
           </div>
 
           <!-- Card 10: Bank Sarasin -->
           <div class="client-single-card">
-            <span class="client-card-icon">🏛️</span>
+            <img class="client-logo" src="assets/img/clients/sarasin.svg" alt="Bank Sarasin">
             <div class="client-card-name">Bank Sarasin</div>
             <span class="client-card-category">Private Banking</span>
           </div>
 
-          <!-- Card 11: Valiant Bank -->
+          <!-- Card 11: Die Post -->
           <div class="client-single-card">
-            <span class="client-card-icon">🏦</span>
-            <div class="client-card-name">Valiant Bank</div>
-            <span class="client-card-category">Serviços Financeiros</span>
-          </div>
-
-          <!-- Card 12: Die Post -->
-          <div class="client-single-card">
-            <span class="client-card-icon">📮</span>
-            <div class="client-card-name">Die Post</div>
+            <img class="client-logo" src="assets/img/clients/swiss-post.svg" alt="Swiss Post">
+            <div class="client-card-name">Swiss Post</div>
             <span class="client-card-category">Logística Nacional Suíça</span>
           </div>
         </div>
@@ -1352,6 +1395,7 @@
   </section>
 
 </main>
+
 
 <footer id="site-footer"></footer>
 <script src="assets/js/components.js"></script>
